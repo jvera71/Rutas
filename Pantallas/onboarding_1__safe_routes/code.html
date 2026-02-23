@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Walk with Confidence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header with Skip Option -->
+<header class="flex items-center justify-end p-6">
+<button class="text-slate-500 dark:text-slate-400 text-base font-semibold hover:text-primary transition-colors">
+                Skip
+            </button>
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-1 flex-col items-center px-6 pb-12">
+<!-- Hero Illustration Container -->
+<div class="w-full max-w-sm aspect-square relative mb-12 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl"></div>
+<!-- Main Illustration Placeholder -->
+<div class="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center border border-slate-300 dark:border-slate-700">
+<img alt="Woman walking confidently under streetlamp at night" class="w-full h-full object-cover opacity-80" data-alt="Woman walking confidently under bright streetlamp night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp2TJx6HHPtC6WREY_dNUxm7DwDUk3cJWjMEsaAz9p8NDX6WLc12aIrsto1Wd51m4ZsfGkrADD5rh0-X-KMknF3cn8vd_6abOQlCCq4_WEzSMpDtPVMxSE0OzH06hIfPYcAKh5attY9qq46F4AO7ortzen7lUs3_if329P34bP-l5TXbqabNSLrgEQrrKGwQbXZZCuFRPaiPOGh4yB5zwRLmDFzbBp6NjhoQHuqsrKOSACrGx5lSUvpAIwf_1U-mDhI4V8207saqJH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent flex flex-col justify-end p-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">light_mode</span>
+<div class="h-1 w-24 bg-primary/40 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="text-center max-w-xs space-y-4">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+                    Walk with Confidence
+                </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                    Our Safe Routes feature guides you through well-lit areas and security-monitored paths, ensuring every journey home is a secure one.
+                </p>
+</div>
+<!-- Spacer for layout balance -->
+<div class="flex-grow"></div>
+<!-- Footer Controls -->
+<div class="w-full max-w-sm space-y-8 pb-8">
+<!-- Progress Indicator (3 dots) -->
+<div class="flex flex-row items-center justify-center gap-2">
+<div class="h-2 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+</div>
+<!-- Primary Action Button -->
+<div class="px-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span>Get Started</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Branding/Gov Authority Text -->
+<p class="text-center text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+                    Managed by City Safety Bureau
+                </p>
+</div>
+</main>
+<!-- iOS Home Indicator Safe Area Spacer -->
+<div class="h-8 w-full bg-transparent"></div>
+</div>
+</body></html>

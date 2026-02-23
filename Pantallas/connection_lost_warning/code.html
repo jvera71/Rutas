@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Connection Lost Warning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f3ba12",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center justify-center p-0 m-0">
+<div class="relative flex h-screen w-full max-w-[430px] flex-col bg-background-light dark:bg-background-dark overflow-hidden shadow-2xl">
+<!-- Top App Bar / Header -->
+<div class="flex items-center px-4 py-6 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">System Alert</h2>
+</div>
+<!-- Warning Illustration / Icon Area -->
+<div class="flex w-full grow flex-col items-center justify-center px-8 text-center">
+<div class="mb-8 relative">
+<!-- Outer Pulse Effect -->
+<div class="absolute inset-0 bg-primary/20 rounded-full scale-150 blur-xl"></div>
+<div class="relative bg-primary/10 p-10 rounded-full border-2 border-primary/30">
+<span class="material-symbols-outlined text-primary text-[80px] leading-none" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                        warning
+                    </span>
+</div>
+</div>
+<!-- Content -->
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl font-bold leading-tight pb-4">
+                Connection Lost
+            </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed mb-8">
+                We've lost your GPS signal. Don’t worry—your <span class="text-primary font-semibold">Panic Button</span> and <span class="text-primary font-semibold">SMS alerts</span> still work offline.
+            </p>
+<!-- Status Indicator -->
+<div class="w-full max-w-xs flex flex-col gap-3 mb-12">
+<div class="flex justify-between items-center mb-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">Reconnecting to satellite...</p>
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<div class="h-1.5 w-full rounded-full bg-slate-200 dark:bg-white/10 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4 p-6 pb-12 w-full">
+<!-- Primary Action: Emergency -->
+<button class="flex h-16 w-full items-center justify-center gap-3 rounded-full bg-red-600 text-white font-bold text-lg shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">emergency_share</span>
+                Call Emergency Services
+            </button>
+<!-- Secondary Action: Retry -->
+<button class="flex h-16 w-full items-center justify-center gap-3 rounded-full border-2 border-primary text-primary font-bold text-lg active:scale-95 transition-transform bg-transparent">
+<span class="material-symbols-outlined">refresh</span>
+                Retry Connection
+            </button>
+<!-- Tertiary: Dismiss/Go Back -->
+<button class="mt-2 text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors">
+                Continue to Offline Map
+            </button>
+</div>
+<!-- Decorative Map Background (Blurred/Dimmed) -->
+<div class="absolute inset-0 -z-10 opacity-10 grayscale pointer-events-none">
+<div class="h-full w-full bg-center bg-cover" data-alt="Abstract dark city street map" data-location="Urban Center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhcgi0gR4U80_mvvKWHbemXrO54X4UtGE_cbpcaLQoObQfo0VkMc4BoUEYCvmCaB1CeaDj85nhCnD-B9yuZRiDzpypZPBhm2uR0z2H-th-jIZtgGWLd9rRg8CvTeUWqyHHel9-J565QHR2hU8AVzA9GjWojLmPDvDNtPCQWt5NAlDhzwmXd781ozcTREAaR4hmv5N3z7nu9oYbaOsN1Qn-_uCNatZLay6wHC1CAs_Vclg13MGkAcoXbFZTzZHdYmM432T6Guq6KT23");'></div>
+<div class="absolute inset-0 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm"></div>
+</div>
+</div>
+</body></html>

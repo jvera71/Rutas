@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emergency PIN Deactivation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .keypad-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .key-btn {
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.1s ease-in-out;
+        }
+        .key-btn:active {
+            background-color: rgba(43, 108, 238, 0.3);
+            transform: scale(0.95);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-6 py-4 mt-8">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800/50 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Secure Mode</span>
+<div class="h-1 w-8 bg-primary rounded-full"></div>
+</div>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center px-8 pb-12">
+<!-- Instruction Text -->
+<div class="text-center mb-10">
+<h1 class="text-2xl font-bold mb-3 tracking-tight">Enter PIN to Deactivate</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-[240px] mx-auto leading-relaxed">
+                Enter your 4-digit security code to cancel the panic alert.
+            </p>
+</div>
+<!-- PIN Indicator Dots -->
+<div class="flex gap-6 mb-16">
+<!-- Filled State -->
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<!-- Active/Input State -->
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<!-- Empty States -->
+<div class="w-4 h-4 rounded-full border-2 border-slate-300 dark:border-slate-700"></div>
+<div class="w-4 h-4 rounded-full border-2 border-slate-300 dark:border-slate-700"></div>
+</div>
+<!-- Numerical Keypad -->
+<div class="keypad-grid w-full max-w-sm">
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">1</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">2</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">ABC</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">3</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">DEF</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">4</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">GHI</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">5</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">JKL</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">6</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">MNO</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">7</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">PQRS</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">8</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">TUV</span>
+</button>
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">9</span>
+<span class="text-[10px] font-bold text-slate-500 tracking-tighter">WXYZ</span>
+</button>
+<div class="w-full"></div> <!-- Empty space for alignment -->
+<button class="key-btn rounded-full bg-slate-100 dark:bg-slate-800/40">
+<span class="text-3xl font-semibold">0</span>
+</button>
+<button class="key-btn rounded-full text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">backspace</span>
+</button>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="p-8 mb-4">
+<button class="w-full py-5 rounded-2xl bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20 active:scale-[0.98] transition-all">
+            Cancel Deactivation
+        </button>
+<p class="text-center mt-6 text-slate-500 dark:text-slate-500 text-xs font-medium uppercase tracking-widest">
+            Institutional Safety Protocol v4.2
+        </p>
+</footer>
+<!-- iOS Home Indicator Spacer -->
+<div class="h-8 bg-transparent"></div>
+</body></html>

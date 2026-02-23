@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Emergency &amp; Recording State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#050202", // Deeper black for discreetness
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .pulse-red {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .3; }
+        }
+        body {
+            background-color: #050202;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-slate-100 antialiased overflow-hidden select-none">
+<!-- Main Container: Designed for iOS Phone Form Factor -->
+<div class="relative flex h-screen w-full flex-col justify-between p-6">
+<!-- Top Status Bar (Minimal & Discreet) -->
+<header class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-2">
+<div class="flex size-3 rounded-full bg-primary pulse-red"></div>
+<span class="text-xs font-bold tracking-widest text-primary/80 uppercase">Recording</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Encrypted Stream</span>
+</div>
+</header>
+<!-- Center Content: Visual Confirmation for User Only -->
+<main class="flex flex-col items-center justify-center flex-1 gap-8">
+<!-- Subtle Camera Preview Placeholder (Low Brightness/Monochrome Style) -->
+<div class="relative w-full max-w-[280px] aspect-[3/4] rounded-xl overflow-hidden border border-white/5 bg-neutral-900/40">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/10 text-6xl">videocam_off</span>
+</div>
+<!-- Low Opacity Image Overlay to represent a dark street view -->
+<div class="absolute inset-0 opacity-20 bg-cover bg-center grayscale" data-alt="Dark grainy urban street at night monochrome" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDl1wcMS8bDd0cV8gqZn-sxjwgoE_A7ZfXB4DEaP3SQ8NxBsbVQfFqxztqArPD3YM7XZcLvOKtP6Rflp_8KLYNY05tNmnHP5X4WizXxC55Vugml0MT_1z0G0ufsJ4XjGpTcDVDzztGvOWK3SmzE359JGlmxy5EFQ7R0p7GUkYOD80LfOjtNmB4YMB9t4N8D3luMWatqQZHYoSzTuzZVv7ZjYWbsmpw34h6pdHyz6ULZVhHMYFIkcCPXF17JMeNhf6I4BuKvSpSAygCJ');"></div>
+<!-- Overlay Info -->
+<div class="absolute bottom-3 left-3 flex flex-col gap-1">
+<div class="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span>
+<span class="text-[10px] font-medium text-white/80">LIVE • 40.7128° N</span>
+</div>
+</div>
+</div>
+<div class="text-center space-y-2">
+<h1 class="text-xl font-bold tracking-tight text-slate-200">Emergency Protocol Active</h1>
+<p class="text-sm text-slate-500 max-w-[240px] mx-auto leading-relaxed">
+                    Evidence is being synchronized to the secure government cloud.
+                </p>
+</div>
+</main>
+<!-- Bottom Actions & Status -->
+<footer class="flex flex-col gap-6 pb-8">
+<!-- Status Message for Authorities -->
+<div class="flex flex-col items-center gap-4 text-center px-4">
+<div class="w-full h-[2px] bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full pulse-red"></div>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-semibold text-slate-300">Police Dispatch Notified</p>
+<p class="text-[11px] text-slate-500 leading-normal">
+                        Your real-time location, audio, and video are being shared with the nearest tactical unit.
+                    </p>
+</div>
+</div>
+<!-- Secured End Alert Button -->
+<div class="flex flex-col items-center gap-3">
+<button class="w-full bg-primary/10 border border-primary/20 text-primary py-4 rounded-xl font-bold text-base flex items-center justify-center gap-3 active:scale-95 transition-all">
+<span class="material-symbols-outlined">key</span>
+<span>End Alert</span>
+</button>
+<p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold">PIN REQUIRED TO DEACTIVATE</p>
+</div>
+<!-- Emergency Contact Footer -->
+<div class="text-center">
+<p class="text-[10px] text-slate-700 font-medium">
+                    Emergency contacts have received your SOS and live link.
+                </p>
+</div>
+</footer>
+</div>
+<!-- Hidden background element to ensure the screen remains "black" in most areas -->
+<div class="fixed inset-0 pointer-events-none border-[12px] border-black/80 z-50"></div>
+</body></html>

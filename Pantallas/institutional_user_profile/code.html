@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institutional User Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Roboto+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "mono": ["Roboto Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined align-middle">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Institutional Profile</h1>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined align-middle">settings</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Profile Overview Section -->
+<section class="p-6 flex flex-col items-center">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full border-4 border-primary/20 p-1">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Professional portrait of a female security officer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJNpIy3hO8v31bl4t5K6h4-kSZUOf7ZRjAeRlMNItGUTtZGw7Ly_QbMKG7_unwZ2bAhARz-nA5BYPwiA54ZhrykT4u-WwLZV9XPVMkpnX3l73ZRk8MM2uzcIDe2CHmQpSnf46Y1cCsteKwe3AVwQ-GvdZjwWThCiJiRSo0qA7JJHeAOn5OreSB8vvl-gQpXYcIig3EEn0ISuw09TUMijVHnjLDQZjKrSRpJYSCjLOdW4KjoacpagrypRvJYAaXM7dvFxTzQRKDvwVW')"></div>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1 rounded-full border-2 border-background-dark">
+<span class="material-symbols-outlined text-sm block">verified</span>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Officer Sarah Jenkins</h2>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Urban Safety Division</p>
+<div class="mt-2 px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">
+                Authorized Personnel
+            </div>
+</section>
+<!-- Institutional Code Card -->
+<section class="px-4 mb-8">
+<div class="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm">
+<h3 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest text-center mb-4">Institutional User Code</h3>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-4 mb-4">
+<p class="text-2xl md:text-3xl font-mono font-medium text-center tracking-wider text-primary dark:text-primary">
+                        AUTH-9921-XRT
+                    </p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl">content_copy</span>
+                    Copy Code
+                </button>
+<p class="text-[11px] text-slate-500 dark:text-slate-500 text-center mt-3 italic">
+                    Share this code only with verified department supervisors.
+                </p>
+</div>
+</section>
+<!-- Emergency Contacts Section -->
+<section class="px-4 mb-8">
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Emergency Contacts</h3>
+<span class="text-[10px] font-bold bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-600 dark:text-slate-400">LOCALLY STORED</span>
+</div>
+<div class="space-y-2">
+<!-- Contact Item -->
+<div class="bg-slate-100 dark:bg-slate-800/40 p-4 rounded-xl flex items-center justify-between border border-transparent hover:border-primary/30 transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">local_police</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Central Dispatch</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">+1 (555) 012-9900</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+<!-- Contact Item -->
+<div class="bg-slate-100 dark:bg-slate-800/40 p-4 rounded-xl flex items-center justify-between border border-transparent hover:border-primary/30 transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">emergency_share</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Crisis Response Unit</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">+1 (555) 012-8844</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+<button class="mt-4 w-full py-3 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl text-slate-500 dark:text-slate-400 font-medium flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+                Add Local Contact
+            </button>
+</section>
+<!-- Privacy Notice -->
+<section class="px-6 mb-8">
+<div class="flex gap-3 p-4 bg-primary/5 border border-primary/20 rounded-xl">
+<span class="material-symbols-outlined text-primary shrink-0">shield_person</span>
+<div class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+<strong class="text-slate-900 dark:text-slate-200">Privacy Notice:</strong> 
+                    No personal data is stored on external servers. All contact information remains on this device. Your institutional identity is only linkable by authorized official government entities via your unique Institutional Code.
+                </div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 border-t border-slate-200 dark:border-slate-800 ios-blur px-2 pb-6 pt-2">
+<div class="max-w-md mx-auto flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Patrol</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Logs</span>
+</a>
+</div>
+</nav>
+</body></html>

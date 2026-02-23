@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Urban Safety - Alta Tensión</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#0a0505",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.2; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        .pulse-effect {
+            animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .glow-button {
+            box-shadow: 0 0 40px rgba(236, 19, 19, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<!-- Main Container -->
+<div class="relative flex h-screen w-full flex-col justify-between overflow-hidden">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-6">
+<div class="flex items-center gap-2">
+<div class="bg-primary/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-2xl">shield_with_heart</span>
+</div>
+<div>
+<h1 class="text-sm font-bold tracking-tight uppercase text-slate-400">Urban Safety</h1>
+<p class="text-[10px] text-primary font-bold tracking-[0.2em]">ALTA TENSIÓN</p>
+</div>
+</div>
+<button class="bg-slate-800/50 p-2 rounded-full">
+<span class="material-symbols-outlined text-slate-300">info</span>
+</button>
+</header>
+<!-- Instructional Content -->
+<div class="px-8 text-center mt-4">
+<h2 class="text-3xl font-bold leading-tight tracking-tight mb-3">
+                Keep your finger <br/>pressed.
+            </h2>
+<p class="text-slate-400 text-sm leading-relaxed max-w-[280px] mx-auto">
+                If you let go, an emergency alarm will trigger in <span class="text-primary font-bold">5 seconds</span>.
+            </p>
+</div>
+<!-- Central Trigger Area -->
+<div class="relative flex flex-1 items-center justify-center">
+<!-- Pulsing Background Rings -->
+<div class="absolute w-[320px] h-[320px] rounded-full border-2 border-primary/20 pulse-effect"></div>
+<div class="absolute w-[380px] h-[380px] rounded-full border border-primary/10 pulse-effect" style="animation-delay: 1s;"></div>
+<!-- Main Button Container -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="group relative flex h-64 w-64 items-center justify-center rounded-full bg-primary/10 border-4 border-primary/30 glow-button cursor-pointer active:scale-95 transition-transform">
+<!-- Inner Core -->
+<div class="flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 shadow-[inset_0_2px_10px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-6xl text-white select-none" style="font-variation-settings: 'FILL' 1">fingerprint</span>
+</div>
+<!-- Monitoring Label -->
+<div class="absolute -top-12 flex items-center gap-2 bg-slate-900/80 px-4 py-1.5 rounded-full border border-primary/40 backdrop-blur-md">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">Active Monitoring</span>
+</div>
+</div>
+<!-- Interaction Hint -->
+<div class="mt-12 flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-slate-400 text-xl animate-bounce">keyboard_double_arrow_down</span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-medium">Hold area firmly</span>
+</div>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="p-8 flex flex-col gap-4">
+<!-- Navigation Context Card -->
+<div class="flex items-center gap-4 bg-slate-900/40 p-4 rounded-2xl border border-slate-800/50 backdrop-blur-sm">
+<div class="h-12 w-12 rounded-xl bg-slate-800 overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-50" data-alt="Abstract dark map pattern with location pin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqxPDTHuOibUphejqWaxndDYsj0MfiqG19tzSMsVS4amOPzGtADJ2JI355MT-mNjjHdlYN0b6E1fvSgpf42y0YXsIxnOaY4AMtUeCnKAL-9ZtPcdPdtJ5kDubKNC9IL3F4M_yTOb0lUf0I0OBNhDGmMLkP9iFQZupVNtsTFjMkC2AFlSHJPjCA9PjJ0PQPQ38yjMB3uCDV2jazbWH3J7Av815obdho0wfygh2QPF166ACTDA4ml7HGJuEErRINqGXcCSN9ZwjST2m-"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-[11px] text-slate-500 font-medium uppercase tracking-wider">Current Location</p>
+<p class="text-sm font-semibold truncate">San Telmo District, Main St.</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+<!-- PIN Protected Exit Button -->
+<button class="flex w-full items-center justify-center gap-3 rounded-full bg-slate-800/50 border border-slate-700 h-16 text-slate-100 font-bold active:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">lock</span>
+<span>I AM SAFE (EXIT MODE)</span>
+</button>
+<p class="text-center text-[10px] text-slate-600 font-medium">
+                Managed by Municipal Security Response Team
+            </p>
+</div>
+<!-- IOS Indicator -->
+<div class="flex justify-center pb-2">
+<div class="w-32 h-1 bg-slate-800 rounded-full"></div>
+</div>
+</div>
+<!-- Bottom Navigation Component (modified for safe mode) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-background-dark/80 backdrop-blur-lg border-t border-slate-800 hidden">
+<div class="flex justify-around p-4 pb-8">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">shield</span>
+<span class="text-[10px] font-bold">Safety</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-bold">Routes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">call</span>
+<span class="text-[10px] font-bold">Contact</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</div>
+</body></html>

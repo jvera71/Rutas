@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safe Haven Details Modal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-end justify-center">
+<!-- Background Map Mockup (Visual Context) -->
+<div class="fixed inset-0 z-0 opacity-40">
+<img alt="City map at night" class="w-full h-full object-cover grayscale brightness-50" data-alt="Dark stylized city map at night" data-location="Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8UHd1zBYWm__ON_ESdOXeMG-XQl9MUkKCPVL4FRcZsvnwcsYIMWUSyoW3n-BVDeEVXwOk6XUoEGtdL-z0-hTMZS0EAR3_qsAFDFjd6L68qVcsIdH58WAglB-SuyyApSs0NuEX34V_7kw-kRvdfWZuWHQAfKaN-RMbjNrXEBK-uZR1Vp1UH1xf81OcDOSC8RGyzQP8Fcg4ZsfwqFNVBNX_5_KX7KGRJR9sikVBMLHDYskvrO6a9oOVCNyjHi1R6gj93KGj_9FIzVu0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+</div>
+<!-- Bottom Sheet Modal -->
+<div class="relative z-10 w-full max-w-md bg-background-light dark:bg-background-dark rounded-t-xl shadow-2xl border-t border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden">
+<!-- BottomSheetHandle -->
+<div class="flex flex-col items-stretch">
+<button class="flex h-6 w-full items-center justify-center pt-2">
+<div class="h-1.5 w-12 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+</button>
+<div class="px-6 pt-6 pb-4">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-500">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Open Now
+                    </span>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">250m away</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight mt-2 flex items-center gap-2">
+                    Farmacia 24h Central
+                    <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">verified</span>
+</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm mt-1">124 Calle Mayor, City Center</p>
+</div>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 px-6 pb-6">
+<!-- Service Item 1 -->
+<div class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<div class="text-primary mt-0.5">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold">Official Training</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Staff trained in emergency safety protocols</p>
+</div>
+</div>
+<!-- Service Item 2 -->
+<div class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<div class="text-primary mt-0.5">
+<span class="material-symbols-outlined">videocam</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold">Security Cameras</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">24/7 CCTV active monitoring enabled</p>
+</div>
+</div>
+<!-- Service Item 3 -->
+<div class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 sm:col-span-2">
+<div class="text-primary mt-0.5">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold">Always Accessible</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Brightly lit and open all night for your safety</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="px-6 pb-6 space-y-3">
+<button class="w-full h-14 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined">directions</span>
+                    Get Directions
+                </button>
+<button class="w-full h-14 border border-slate-300 dark:border-slate-700 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold rounded-xl flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined">call</span>
+                    Call Establishment
+                </button>
+</div>
+<!-- Official Footer -->
+<div class="bg-slate-100 dark:bg-slate-900/80 px-6 py-4 flex items-center justify-center gap-2 border-t border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-slate-400 text-lg">gavel</span>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] uppercase tracking-widest font-bold">
+                    This establishment is part of the Official Safety Network
+                </p>
+</div>
+<!-- Safe Area Bottom Spacer (iOS) -->
+<div class="h-8 dark:bg-slate-900/80"></div>
+</div>
+</div>
+</body></html>

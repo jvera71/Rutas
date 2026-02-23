@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Main Safety Map Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1754cf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "safety-red": "#dc2626",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Public Sans", sans-serif;
+    -webkit-tap-highlight-color: transparent
+    }
+.map-bg {
+    background-image: linear-gradient(rgba(17, 22, 33, 0.5), rgba(17, 22, 33, 0.5)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuDWT88mFJiL-WLwb0_evcNYe0u9Oe8PjcqdhXk2E6Bor4JNn7nKQPkvNy-gfE3qVyxh9DRWahtTMcs-n2fDDObKrQlgm8ldDyFJ8I8Pk1pjX50LTD8tUPiXqBDXUYXITDnkvhWyS4pCs0TctzT0fu4LVDCl6bCNC-9OtCmLBnXmOAiEScfo4k39oh1uuqhObJziJMnLYOi_Qv2sn1ZW_rVldAbJaEyYEZKNYT_ZNUhYhboDBhmKryETnyD3Ru0Mf6R1dv1TRVaVN48K);
+    background-size: cover;
+    background-position: center
+    }
+.glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto shadow-2xl border-x border-slate-800">
+<!-- Interactive Map Background -->
+<div class="absolute inset-0 z-0 map-bg" data-alt="Dark themed street map with location pins" data-location="San Francisco Downtown" style="">
+<!-- User Location Pulse -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="relative flex h-6 w-6">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-primary border-2 border-white"></span>
+</div>
+</div>
+<!-- Safe Haven Markers -->
+<div class="absolute top-[40%] left-[30%] flex flex-col items-center">
+<div class="bg-primary p-1.5 rounded-full shadow-lg border-2 border-slate-900">
+<span class="material-symbols-outlined text-white text-base">local_pharmacy</span>
+</div>
+<div class="mt-1 bg-slate-900/80 px-2 py-0.5 rounded-full glass-effect">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">Pharmacy 24h</p>
+</div>
+</div>
+<div class="absolute top-[60%] left-[70%] flex flex-col items-center">
+<div class="bg-primary p-1.5 rounded-full shadow-lg border-2 border-slate-900">
+<span class="material-symbols-outlined text-white text-base">storefront</span>
+</div>
+<div class="mt-1 bg-slate-900/80 px-2 py-0.5 rounded-full glass-effect">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">Open Shop</p>
+</div>
+</div>
+<div class="absolute top-[25%] left-[55%] flex flex-col items-center">
+<div class="bg-primary p-1.5 rounded-full shadow-lg border-2 border-slate-900">
+<span class="material-symbols-outlined text-white text-base">shield</span>
+</div>
+<div class="mt-1 bg-slate-900/80 px-2 py-0.5 rounded-full glass-effect">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider">Safe Haven</p>
+</div>
+</div>
+</div>
+<!-- Top UI Layer -->
+<div class="relative z-10 flex flex-col gap-3 p-4 pt-12">
+<!-- Top Search Bar -->
+<div class="flex items-center gap-3">
+<div class="flex-1 flex items-center bg-slate-900/90 glass-effect border border-slate-700/50 rounded-xl px-4 h-14 shadow-lg">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-slate-100 placeholder:text-slate-500 w-full font-medium ml-2" placeholder="Where are you going?" type="text"/>
+<span class="material-symbols-outlined text-primary">mic</span>
+</div>
+<button class="bg-slate-900/90 glass-effect border border-slate-700/50 size-14 rounded-xl flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-slate-100">tune</span>
+</button>
+</div>
+<!-- Quick Filters -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 border border-primary/20 shadow-md">
+<span class="material-symbols-outlined text-white text-lg">home</span>
+<p class="text-white text-xs font-semibold">Go Home</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-900/80 glass-effect px-4 border border-slate-700/50 shadow-md">
+<span class="material-symbols-outlined text-primary text-lg">local_pharmacy</span>
+<p class="text-slate-100 text-xs font-semibold">Pharmacies</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-900/80 glass-effect px-4 border border-slate-700/50 shadow-md">
+<span class="material-symbols-outlined text-primary text-lg">storefront</span>
+<p class="text-slate-100 text-xs font-semibold">24h Shops</p>
+</div>
+</div>
+</div>
+<!-- Floating Action Buttons -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-3">
+<!-- Camouflage Mode Toggle -->
+<button class="size-12 rounded-full bg-slate-900/60 glass-effect border border-slate-700/50 flex items-center justify-center shadow-lg" title="Camouflage Mode">
+<span class="material-symbols-outlined text-slate-400 text-xl">wb_sunny</span>
+</button>
+<div class="flex flex-col bg-slate-900/90 glass-effect border border-slate-700/50 rounded-xl shadow-lg overflow-hidden">
+<button class="size-12 flex items-center justify-center border-b border-slate-800">
+<span class="material-symbols-outlined text-slate-100 text-xl">add</span>
+</button>
+<button class="size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-100 text-xl">remove</span>
+</button>
+</div>
+<button class="size-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-xl">my_location</span>
+</button>
+</div>
+<!-- Emergency & Navigation Layer -->
+<div class="mt-auto relative z-20">
+<!-- Safety Status Indicator -->
+<div class="flex justify-center pb-3">
+<div class="bg-emerald-500/20 border border-emerald-500/30 px-3 py-1 rounded-full glass-effect flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+<p class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">GPS Tracking Active</p>
+</div>
+</div>
+<!-- Bottom Action Panel -->
+<div class="bg-slate-900/95 glass-effect border-t border-slate-800 px-6 pt-6 pb-10 rounded-t-[2.5rem] shadow-2xl">
+<div class="flex items-center justify-between mb-8">
+<!-- Fake Call -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-active:scale-95 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-slate-300 text-3xl">phone_callback</span>
+</div>
+<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Fake Call</span>
+</button>
+<!-- Panic Button -->
+<button class="relative flex items-center justify-center group">
+<div class="absolute -inset-4 bg-safety-red/20 rounded-full blur-xl animate-pulse"></div>
+<div class="size-24 rounded-full bg-safety-red border-4 border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.5)] group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-white text-5xl font-bold">warning</span>
+</div>
+</button>
+<!-- Dead Man's Switch -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-active:scale-95 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl">timer</span>
+</div>
+<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Safety Timer</span>
+</button>
+</div>
+<!-- Navigation Tabs -->
+<div class="flex items-center justify-between px-2">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">map</span>
+<span class="text-[10px] font-bold">MAP</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="text-[10px] font-bold">ALERTS</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">group</span>
+<span class="text-[10px] font-bold">CIRCLE</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold">PROFILE</span>
+</a>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="mt-4 flex justify-center">
+<div class="w-32 h-1.5 bg-slate-800 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

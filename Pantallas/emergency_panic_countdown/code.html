@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emergency Panic Countdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.material.io/google-icons/material-symbols-outlined.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1754cf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "emergency": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+<!-- Header / Status Bar Area -->
+<div class="pt-12 pb-6 px-6 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emergency animate-pulse">fmd_good</span>
+<span class="text-sm font-semibold tracking-wider uppercase text-slate-400">GPS Tracking Active</span>
+</div>
+<div class="flex items-center gap-1 bg-emergency/10 px-3 py-1 rounded-full">
+<div class="w-2 h-2 rounded-full bg-emergency animate-ping"></div>
+<span class="text-xs font-bold text-emergency">LIVE</span>
+</div>
+</div>
+<!-- Main Countdown Section -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 relative">
+<!-- Subtle Pulse Rings -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-64 h-64 border-2 border-emergency/20 rounded-full animate-[ping_3s_linear_infinite]"></div>
+<div class="absolute w-80 h-80 border border-emergency/10 rounded-full animate-[ping_4s_linear_infinite]"></div>
+</div>
+<div class="text-center z-10">
+<h1 class="text-emergency text-xl font-extrabold uppercase tracking-[0.2em] mb-4">Emergency Alert</h1>
+<p class="text-slate-400 text-sm mb-12 max-w-[250px] mx-auto">Authorities will be dispatched to your precise location in:</p>
+<!-- Large Timer Component -->
+<div class="relative inline-flex items-center justify-center">
+<div class="text-[12rem] font-black leading-none tracking-tighter text-slate-100 drop-shadow-[0_0_35px_rgba(239,68,68,0.4)]">
+                    08
+                </div>
+</div>
+<div class="mt-12 space-y-2">
+<p class="text-slate-200 font-bold text-lg">Dispatching Local Response</p>
+<p class="text-slate-500 text-xs">Identity verified via SecureGov Portal</p>
+</div>
+</div>
+</main>
+<!-- Bottom Action Section -->
+<div class="px-6 pb-12 w-full space-y-6">
+<!-- PIN Input Mock (Simplified) -->
+<div class="flex justify-center gap-4 mb-4">
+<div class="w-12 h-16 rounded-xl border-2 border-slate-700 bg-slate-800/50 flex items-center justify-center text-2xl font-bold text-primary">●</div>
+<div class="w-12 h-16 rounded-xl border-2 border-slate-700 bg-slate-800/50 flex items-center justify-center text-2xl font-bold"></div>
+<div class="w-12 h-16 rounded-xl border-2 border-slate-700 bg-slate-800/50 flex items-center justify-center text-2xl font-bold"></div>
+<div class="w-12 h-16 rounded-xl border-2 border-slate-700 bg-slate-800/50 flex items-center justify-center text-2xl font-bold"></div>
+</div>
+<!-- Cancel Button -->
+<button class="w-full py-5 bg-primary hover:bg-primary/90 text-white rounded-2xl font-bold text-xl transition-all active:scale-[0.98] shadow-lg shadow-primary/20 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">lock_open</span>
+            CANCEL WITH PIN
+        </button>
+<p class="text-center text-slate-500 text-xs px-8">
+            This action will notify your emergency contacts and the Metropolitan Safety Bureau.
+        </p>
+</div>
+<!-- Bottom Navigation Bar (Modified for high urgency) -->
+<div class="relative flex h-auto flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 px-4 pb-8 pt-4">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">home</span>
+</div>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">map</span>
+</div>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-emergency" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">notifications_active</span>
+</div>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Location Context Image (Minimal/Abstract Map) -->
+<div class="absolute top-0 left-0 w-full h-full -z-10 opacity-10">
+<img alt="Dark urban street map" class="w-full h-full object-cover grayscale invert" data-alt="Abstract dark city map with neon highlights" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQL6rQyAllJIDXRQ4GR0PZCX2CIp65C-_LHeORRoXGESh8Q2mikLy-gyPJqB8MupwsIDuGAtrgaWqJtzpg0UUvkrUBK7yJKZQpWk0HNMEpnSjdHPDM4Mh_DF_2mItJ5gfuVIKKBge82X9AjyNU-BNd5Ayo4uNsQnRzKt4_v68NPiU5Apc4dceCbJLLC-Jx9FRjo1-9fjfA6rq9N8tP1mOF8Y-JtDksv1x3pAVzUDG8TPR3lMSDrnr_-6bHt89htf243V8SAAOT5HQC"/>
+</div>
+</body></html>

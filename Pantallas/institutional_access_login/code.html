@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institutional Access Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Status Bar Area (iOS Style Spacing) -->
+<div class="h-12 w-full"></div>
+<main class="flex-1 flex flex-col items-center px-6 max-w-[480px] mx-auto w-full">
+<!-- Municipal Logo / Icon Section -->
+<div class="mt-8 mb-12 flex flex-col items-center">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1">shield_person</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-center">Urban Safety Initiative</h1>
+<p class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 mt-1 font-semibold">Official Municipal Portal</p>
+</div>
+<!-- Hero Illustration / Visual Context -->
+<div class="w-full aspect-[16/9] rounded-xl overflow-hidden mb-8 border border-slate-200 dark:border-slate-800 shadow-xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="Abstract dark city lights night view portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxYrypbv1b7k-eGMk77c2VWa5vDt79Mioj4l_LUsQMp1qsenRHPqlL23dNWaXakcGBYvdSJEacTeWP__0Jy2ZKguv4VYtVfV_Woq1FAAIJL1G7upXUUJFdFpMV5D4vCEKVHsqK0TpZUIld9D_CJ2faI7XEBUjfAvbWgqaB5Y371QNjuOvG1jLdzMjhRTWf0uEdMbobuwbPp6q3SCZfiE2W2Hkl67MMSs8u532tmdhdybFshWvb7-DWRaoZlHqr0huULbjyHNo7Z_Yk')">
+</div>
+</div>
+<!-- Login Form Container -->
+<div class="w-full space-y-6">
+<div class="text-center space-y-2">
+<h2 class="text-2xl font-bold">Institutional Access</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Enter your unique municipal authorization code to proceed to the secure dashboard.</p>
+</div>
+<div class="space-y-4 pt-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1" for="user-code">
+                        Institutional User Code
+                    </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
+                            lock_open
+                        </span>
+<input class="w-full h-14 pl-12 pr-4 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600 text-lg tracking-wider" id="user-code" placeholder="e.g. ADM-789-X" type="text"/>
+</div>
+</div>
+<button class="w-full h-14 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+<span>Access App</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+<div class="flex justify-center pt-2">
+<a class="text-primary text-sm font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+                    Where do I find my code?
+                </a>
+</div>
+</div>
+<!-- Security Footer -->
+<div class="mt-auto py-10 flex flex-col items-center gap-4">
+<div class="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 font-bold">
+<span class="material-symbols-outlined text-xs">verified_user</span>
+                End-to-End Encrypted Access
+            </div>
+<div class="h-1 w-32 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+</div>
+</main>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-8 w-full"></div>
+</body></html>

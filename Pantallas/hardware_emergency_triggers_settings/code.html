@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hardware Emergency Triggers Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 2px solid #136dec;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-slate-200 dark:border-slate-800">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold tracking-tight">Emergency Triggers</h1>
+<div class="size-10"></div> <!-- Spacer for symmetry -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-8 max-w-md mx-auto w-full">
+<!-- Hardware Shortcuts Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary text-xl">settings_input_component</span>
+<h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Hardware Shortcuts</h2>
+</div>
+<!-- Trigger 1: Power Button -->
+<div class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 flex items-center justify-between gap-4">
+<div class="flex-1">
+<p class="text-base font-semibold">Power Button Shortcut</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        Press the power button 5 times to trigger a silent alarm and share location.
+                    </p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-colors has-[:checked]:bg-primary">
+<input checked="" class="peer invisible absolute" type="checkbox"/>
+<div class="h-6 w-6 rounded-full bg-white shadow-md transition-transform peer-checked:translate-x-6"></div>
+</label>
+</div>
+</div>
+<!-- Trigger 2: Shake to Alarm -->
+<div class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 flex items-center justify-between gap-4">
+<div class="flex-1">
+<p class="text-base font-semibold">Shake to Alarm</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        Detects violent motion to activate emergency services automatically.
+                    </p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-colors has-[:checked]:bg-primary">
+<input checked="" class="peer invisible absolute" type="checkbox"/>
+<div class="h-6 w-6 rounded-full bg-white shadow-md transition-transform peer-checked:translate-x-6"></div>
+</label>
+</div>
+</div>
+<!-- Trigger 3: Volume Button -->
+<div class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 flex items-center justify-between gap-4">
+<div class="flex-1">
+<p class="text-base font-semibold">Volume Button Activation</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        Hold both volume buttons for 3 seconds to initiate an emergency countdown.
+                    </p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-colors has-[:checked]:bg-primary">
+<input class="peer invisible absolute" type="checkbox"/>
+<div class="h-6 w-6 rounded-full bg-white shadow-md transition-transform peer-checked:translate-x-6"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Calibration Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary text-xl">vibration</span>
+<h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Shake Sensitivity</h2>
+</div>
+<div class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                    Adjust how easily the "Shake to Alarm" feature triggers. Calibrate to avoid false positives during exercise.
+                </p>
+<div class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<span class="text-xs font-medium text-slate-400">Low Sensitivity</span>
+<span class="text-xs font-medium text-slate-400">High Sensitivity</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary" max="10" min="1" type="range" value="6"/>
+</div>
+</div>
+<button class="w-full py-3 px-4 rounded-xl border border-primary/30 bg-primary/10 text-primary font-semibold flex items-center justify-center gap-2 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">enable</span>
+                    Test Shake Threshold
+                </button>
+</div>
+</section>
+<!-- Warning Disclaimer -->
+<section class="px-4 text-center">
+<p class="text-xs text-slate-500 dark:text-slate-500">
+                Note: Hardware triggers may require specific system permissions. Ensure "Always Allow" is selected for location services.
+            </p>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium">Safe Map</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<span class="text-[10px] font-medium">Triggers</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

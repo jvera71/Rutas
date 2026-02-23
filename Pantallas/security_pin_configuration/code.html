@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security PIN Configuration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex h-screen w-full flex-col max-w-[430px] mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header / Top Bar -->
+<div class="flex items-center p-6 justify-between">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back_ios_new</span>
+</button>
+<div class="flex-1 flex justify-center">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Step 1 of 2</span>
+</div>
+<div class="size-10"></div> <!-- Spacer for symmetry -->
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-col flex-1 px-8 pt-4">
+<div class="text-center space-y-3 mb-12">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Set your Security PIN</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed max-w-[280px] mx-auto">
+                    This PIN will be used to cancel alerts and verify your safety.
+                </p>
+</div>
+<!-- PIN Display Indicators -->
+<div class="flex justify-center gap-6 mb-16">
+<!-- Filled Dot (Active State) -->
+<div class="size-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<!-- Empty Dots -->
+<div class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-transparent"></div>
+<div class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-transparent"></div>
+<div class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-transparent"></div>
+</div>
+<!-- Custom Numeric Keypad -->
+<div class="grid grid-cols-3 gap-y-6 gap-x-8 max-w-[300px] mx-auto mb-10">
+<!-- Row 1 -->
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">1</button>
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">2</button>
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">3</button>
+<!-- Row 2 -->
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">4</button>
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">5</button>
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">6</button>
+<!-- Row 3 -->
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">7</button>
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">8</button>
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">9</button>
+<!-- Row 4 -->
+<div class="size-20"></div> <!-- Spacer -->
+<button class="size-20 rounded-full flex items-center justify-center text-2xl font-semibold bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-primary/20 active:scale-95 transition-all">0</button>
+<button class="size-20 rounded-full flex items-center justify-center hover:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">backspace</span>
+</button>
+</div>
+</div>
+<!-- Footer Action & Privacy Note -->
+<div class="p-8 space-y-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-5 rounded-xl text-lg shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+                Continue to Confirm
+            </button>
+<div class="flex items-start gap-3 justify-center px-4">
+<span class="material-symbols-outlined text-slate-400 text-lg mt-0.5">lock</span>
+<p class="text-slate-500 dark:text-slate-500 text-xs text-center leading-tight">
+                    This PIN is stored locally on your device for maximum privacy and is never shared with external servers.
+                </p>
+</div>
+</div>
+<!-- Home Indicator (iOS Style) -->
+<div class="h-1.5 w-32 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-2 shrink-0"></div>
+</div>
+</body></html>

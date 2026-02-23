@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RutasApp/RutasApp.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

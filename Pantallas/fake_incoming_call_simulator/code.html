@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fake Incoming Call Simulator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df259",
+                        "danger": "#ff3b30",
+                        "background-light": "#f5f8f6",
+                        "background-dark": "#000000",
+                        "ios-gray": "#1c1c1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .caller-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<!-- Main Simulator Container (Phone Frame Aspect Ratio) -->
+<div class="relative mx-auto h-screen w-full max-w-[430px] flex flex-col overflow-hidden bg-background-dark shadow-2xl">
+<!-- iOS Status Bar Simulation -->
+<div class="flex justify-between items-center px-8 pt-4 pb-2 w-full z-50">
+<div class="text-[15px] font-semibold tracking-tight">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[22px]">battery_full</span>
+</div>
+</div>
+<!-- Call Content Wrapper -->
+<div class="flex-1 flex flex-col items-center justify-between py-12 px-6 relative">
+<!-- Caller Info -->
+<div class="text-center mt-8 z-10">
+<h1 class="text-[34px] font-medium tracking-tight text-white mb-1">Mamá</h1>
+<p class="text-[17px] text-slate-400 font-normal">mobile</p>
+</div>
+<!-- Profile Image Placeholder (Subtle Overlay) -->
+<div class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+<div class="w-64 h-64 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[120px] text-primary">person</span>
+</div>
+</div>
+<!-- Bottom Controls Container -->
+<div class="w-full space-y-20 z-10">
+<!-- Quick Reminders/Messages (iOS Style) -->
+<div class="flex justify-between px-10">
+<div class="flex flex-col items-center gap-2">
+<div class="p-2 rounded-full">
+<span class="material-symbols-outlined text-white text-[24px]">alarm</span>
+</div>
+<span class="text-[11px] text-white/80 font-medium">Remind Me</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="p-2 rounded-full">
+<span class="material-symbols-outlined text-white text-[24px] fill-1">chat_bubble</span>
+</div>
+<span class="text-[11px] text-white/80 font-medium">Message</span>
+</div>
+</div>
+<!-- Primary Call Actions -->
+<div class="flex justify-between items-center px-6 pb-12">
+<!-- Decline Button -->
+<div class="flex flex-col items-center gap-3">
+<button class="w-[76px] h-[76px] rounded-full bg-danger flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-white text-[38px] rotate-[135deg]">call</span>
+</button>
+<span class="text-[13px] text-white font-medium">Decline</span>
+</div>
+<!-- Accept Button -->
+<div class="flex flex-col items-center gap-3">
+<button class="w-[76px] h-[76px] rounded-full bg-primary flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-black text-[38px]">call</span>
+</button>
+<span class="text-[13px] text-white font-medium">Accept</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Home Indicator -->
+<div class="flex justify-center pb-2">
+<div class="w-32 h-1.5 bg-white/30 rounded-full"></div>
+</div>
+<!-- Background Wallpaper Hint (Very subtle gradient) -->
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-ios-gray/40 to-black"></div>
+</div>
+<!-- Hidden View: Active Call State (Demonstrated via Component Below for User Choice) -->
+<!-- In a real app, clicking 'Accept' would toggle visibility to this -->
+<div class="hidden absolute top-0 left-0 w-full h-full z-[100] bg-background-dark flex flex-col animate-in fade-in duration-300">
+<!-- Status Bar -->
+<div class="flex justify-between items-center px-8 pt-4 pb-2 w-full">
+<div class="bg-primary px-2 rounded-full text-[13px] font-bold text-black flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">call</span> 00:04
+            </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[22px]">battery_full</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-center pt-16">
+<h1 class="text-[34px] font-medium tracking-tight text-white">Mamá</h1>
+<p class="text-[17px] text-slate-400 mt-1">00:04</p>
+<!-- Keypad Grid -->
+<div class="grid grid-cols-3 gap-x-8 gap-y-10 mt-20">
+<!-- Mute -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-[72px] h-[72px] rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[32px]">mic_off</span>
+</button>
+<span class="text-[13px] font-medium">mute</span>
+</div>
+<!-- Keypad -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-[72px] h-[72px] rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[32px]">apps</span>
+</button>
+<span class="text-[13px] font-medium">keypad</span>
+</div>
+<!-- Speaker -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-[72px] h-[72px] rounded-full bg-white flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-[32px]">volume_up</span>
+</button>
+<span class="text-[13px] font-medium">speaker</span>
+</div>
+<!-- Add Call -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-[72px] h-[72px] rounded-full bg-white/10 flex items-center justify-center text-white/50 cursor-not-allowed">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<span class="text-[13px] font-medium text-white/50">add call</span>
+</div>
+<!-- FaceTime -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-[72px] h-[72px] rounded-full bg-white/10 flex items-center justify-center text-white/50 cursor-not-allowed">
+<span class="material-symbols-outlined text-[32px]">videocam</span>
+</button>
+<span class="text-[13px] font-medium text-white/50">FaceTime</span>
+</div>
+<!-- Contacts -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-[72px] h-[72px] rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[32px]">account_circle</span>
+</button>
+<span class="text-[13px] font-medium">contacts</span>
+</div>
+</div>
+<!-- End Call Button -->
+<div class="mt-auto mb-16">
+<button class="w-[76px] h-[76px] rounded-full bg-danger flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-[42px] rotate-[135deg]">call</span>
+</button>
+</div>
+</div>
+<!-- Bottom Home Indicator -->
+<div class="flex justify-center pb-2">
+<div class="w-32 h-1.5 bg-white/30 rounded-full"></div>
+</div>
+</div>
+<!-- Navigation Bar for Simulator Control (Not part of the "Fake Call" UI itself, but for the Safety App interface) -->
+<div class="fixed bottom-0 left-0 right-0 bg-ios-gray/80 ios-blur border-t border-white/10 px-6 py-4 z-[1000] flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">shield_with_heart</span>
+<span class="text-[10px] font-semibold">Safety</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-semibold">Safe Route</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-semibold">Guardians</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-semibold">Settings</span>
+</a>
+</div>
+<!-- User Instruction Overlay (Briefly shows then hides) -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 z-[2000] bg-white/10 ios-blur px-6 py-3 rounded-full border border-white/20 text-center pointer-events-none">
+<p class="text-sm font-medium text-white">Tap 'Accept' to deter followers</p>
+</div>
+</body></html>

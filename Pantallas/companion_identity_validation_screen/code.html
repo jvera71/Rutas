@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Companion Identity Validation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25d1f4",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Extra large text for maximum visibility */
+        .giant-text {
+            font-size: clamp(3rem, 15vw, 6rem);
+            letter-spacing: -0.02em;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-primary select-none">
+<!-- Main Screen Container -->
+<div class="relative flex h-screen w-full flex-col bg-primary items-center justify-between p-6 overflow-hidden">
+<!-- Top Status Bar Area (iOS Style) -->
+<div class="w-full flex justify-between items-center pt-8 px-2">
+<div class="flex items-center gap-2 text-white/90">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="text-sm font-bold tracking-widest uppercase">Identity Check</span>
+</div>
+<div class="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full">
+<div class="size-2 bg-white rounded-full animate-pulse"></div>
+<span class="text-[10px] font-bold text-white uppercase tracking-tighter">Live</span>
+</div>
+</div>
+<!-- Central Validation Word -->
+<div class="flex flex-col items-center justify-center flex-1 w-full text-center">
+<div class="mb-2">
+<span class="text-white/70 text-sm font-semibold tracking-[0.2em] uppercase">Validation Code</span>
+</div>
+<h1 class="giant-text font-extrabold text-white leading-none drop-shadow-sm">
+                MANZANA
+            </h1>
+<p class="mt-8 text-white text-lg font-medium max-w-[280px] leading-snug">
+                Show this screen to your companion to verify identity
+            </p>
+</div>
+<!-- Bottom Action Area -->
+<div class="w-full flex flex-col items-center pb-12 gap-6">
+<!-- Visual Aid Icon -->
+<div class="bg-white/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-white text-[32px]">qr_code_scanner</span>
+</div>
+<!-- Cancel Button -->
+<button class="flex items-center justify-center h-12 px-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors border border-white/20 active:scale-95">
+<span class="text-white text-sm font-bold tracking-wide">Cancel Meeting</span>
+</button>
+<!-- Security Footnote -->
+<p class="text-white/60 text-[10px] font-bold uppercase tracking-widest">Secure Urban Safety Protocol</p>
+</div>
+<!-- Decorative background elements for subtle depth without reducing visibility -->
+<div class="absolute -top-24 -left-24 size-64 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 size-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+</body></html>
