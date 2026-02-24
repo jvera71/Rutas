@@ -20,6 +20,14 @@
                         <RadzenDropDown Data="@roles" Multiple="true" style="width: 100%" TextProperty="Name" @bind-Value="@(userRoles)" ValueProperty="Id" Name="Roles" />
                     </ChildContent>
                 </RadzenFormField>
+                <RadzenFormField Text="Official Entity" Variant="Variant.Outlined" Visible="@IsOfficialEntityRoleSelected()">
+                    <ChildContent>
+                        <RadzenDropDown Data="@officialEntities" style="width: 100%" TextProperty="Name" @bind-Value="@selectedOfficialEntityId" ValueProperty="Id" Name="OfficialEntityId" />
+                    </ChildContent>
+                    <Helper>
+                        <RadzenRequiredValidator Component="OfficialEntityId" Text="Official Entity is required" />
+                    </Helper>
+                </RadzenFormField>
                 <RadzenFormField Text="Password" Variant="Variant.Outlined">
                     <ChildContent>
                         <RadzenPassword @bind-Value="@(user.Password)" style="display: block; width: 100%" Name="Password" />
