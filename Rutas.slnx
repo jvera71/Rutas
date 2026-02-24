@@ -2,4 +2,5 @@
   <Project Path="RutasApp/RutasApp.csproj">
     <Deploy Solution="Debug|*" />
   </Project>
+  <Project Path="RutasBackend/RutasBackend.csproj" />
 </Solution>

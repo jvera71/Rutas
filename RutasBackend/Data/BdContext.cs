@@ -1,0 +1,33 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using RutasBackend.Models.Bd;
+
+namespace RutasBackend.Data
+{
+    public partial class BdContext : DbContext
+    {
+        public BdContext()
+        {
+        }
+
+        public BdContext(DbContextOptions<BdContext> options) : base(options)
+        {
+        }
+
+        partial void OnModelBuilding(ModelBuilder builder);
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            this.OnModelBuilding(builder);
+        }
+
+        public DbSet<RutasBackend.Models.Bd.OfficialEntity> OfficialEntities { get; set; }
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Conventions.Add(_ => new BlankTriggerAddingConvention());
+        }
+    }
+}
