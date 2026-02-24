@@ -1,8 +1,5 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using RutasBackend.Models.Bd;
+using RutasBackend.Models;
 
 namespace RutasBackend.Data
 {
@@ -22,11 +19,15 @@ namespace RutasBackend.Data
         {
             base.OnModelCreating(builder);
             this.OnModelBuilding(builder);
+
+           
         }
 
         public DbSet<RutasBackend.Models.Bd.OfficialEntity> OfficialEntities { get; set; }
+        public DbSet<RutasBackend.Models.Bd.OfficialEntityUser> OfficialEntityUsers { get; set; }
+
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
-        {
+        {  
             configurationBuilder.Conventions.Add(_ => new BlankTriggerAddingConvention());
         }
     }

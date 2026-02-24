@@ -19,7 +19,7 @@ builder.Services.AddRadzenCookieThemeService(options =>
     options.Duration = TimeSpan.FromDays(365);
 });
 builder.Services.AddHttpClient();
-builder.Services.AddScoped<RutasBackend.BdService>();
+
 builder.Services.AddDbContext<RutasBackend.Data.BdContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("BdConnection"));
@@ -31,7 +31,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<RutasBackend.SecurityService>();
 builder.Services.AddDbContext<ApplicationIdentityDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BdConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationIdentityConnection"));
 });
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>().AddEntityFrameworkStores<ApplicationIdentityDbContext>().AddDefaultTokenProviders();
 builder.Services.AddControllers().AddOData(o =>

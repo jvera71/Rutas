@@ -15,4 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.HeaderPropagation" Version="10.*-*" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="9.*-*" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
 </Project>

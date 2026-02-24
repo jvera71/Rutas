@@ -64,7 +64,10 @@
     </ItemGroup>
 
     <Target Name="Tailwind" BeforeTargets="Build">
-        <Exec Command="./tailwindcss -i wwwroot/css/input.css -o wwwroot/css/app.tailwind.css" />
+        <PropertyGroup>
+            <TailwindExe Condition="Exists('tailwindcss')">./tailwindcss</TailwindExe>
+            <TailwindExe Condition="'$(TailwindExe)' == ''">tailwindcss</TailwindExe>
+        </PropertyGroup>
+        <Exec Command="$(TailwindExe) -i wwwroot/css/input.css -o wwwroot/css/app.tailwind.css" ContinueOnError="true" IgnoreExitCode="true" />
     </Target>
-
 </Project>
