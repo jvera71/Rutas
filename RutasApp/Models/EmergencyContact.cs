@@ -22,14 +22,14 @@ namespace RutasApp.Models
         /// </summary>
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; } = null!;
 
         /// <summary>
         /// Número de teléfono para el envío automático de SMS de llegada o alerta.
         /// </summary>
         [Required]
         [MaxLength(20)]
-        public string PhoneNumber { get; set; }
+        public required string PhoneNumber { get; set; } = null!;
 
         /// <summary>
         /// Indica si se debe enviar un SMS automático al llegar al destino.

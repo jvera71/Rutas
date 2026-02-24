@@ -6,8 +6,8 @@ namespace RutasApp.Data
     public class AppDbContext : DbContext
     {
         public DbSet<EmergencyContact> EmergencyContacts { get; set; }
-
-     
+        public DbSet<LocalUserProfile> LocalUserProfiles { get; set; }
+        public DbSet<AppConfiguration> AppConfigurations { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

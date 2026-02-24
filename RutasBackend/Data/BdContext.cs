@@ -26,7 +26,14 @@ namespace RutasBackend.Data
 
         public DbSet<OfficialEntity> OfficialEntities { get; set; }
         public DbSet<OfficialEntityUser> OfficialEntityUsers { get; set; }
-       
+
+        public DbSet<CitizenUser> CitizenUsers { get; set; }
+        public DbSet<CompanionSegment> CompanionSegments { get; set; }
+        public DbSet<Journey> Journeys { get; set; }
+        public DbSet<PanicAlert> PanicAlerts { get; set; }
+        public DbSet<ReportPin> ReportPins { get; set; }
+        public DbSet<SafeHaven> SafeHavens { get; set; }
+
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {  
