@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,6 +11,7 @@ namespace RutasBackend.Models.Bd
     /// La identidad real solo es conocida por la entidad oficial emisora del código.
     /// </summary>
     [Table("CitizenUsers")]
+    [Index(nameof(Code),IsUnique = true)]
     public class CitizenUser
     {
         /// <summary>
@@ -22,7 +24,7 @@ namespace RutasBackend.Models.Bd
         /// Código único proporcionado por el ayuntamiento o entidad oficial.
         /// </summary>
         [Required]
-        [MaxLength(50)]
+        [MaxLength(8)]
         public string Code { get; set; }
 
         /// <summary>
