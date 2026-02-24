@@ -1,48 +1,27 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.SignalR.Client
 @using RutasApp.Services
-@inject SignalRService SignalR
-
 @using Microsoft.Extensions.Localization
 @using RutasApp.Resources.Languages
-@inject IStringLocalizer<AppResources> L
+@inject SignalRService SignalR
 @inject LocalizationService Localization
+@inject IStringLocalizer<AppResources> L
 
-<div class="p-8 max-w-2xl mx-auto bg-white rounded-xl shadow-md space-y-4 dark:bg-slate-800">
-    <div class="flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
-            @L["Home"] - @L["AppTitle"]
-        </h1>
-        <div class="flex space-x-2">
-            <button @onclick='() => ChangeLanguage("es")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">ES</button>
-            <button @onclick='() => ChangeLanguage("en")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">EN</button>
-        </div>
-    </div>
-    
-    <p class="text-slate-500 dark:text-slate-400">
-        @L["SwitchLanguage"]: <strong>@Localization.CurrentCulture</strong>
-    </p>
-
-    <div class="space-y-2">
-        <input @bind="userInput" placeholder="Nombre" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
-        <input @bind="messageInput" placeholder="Mensaje" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
-        <button @onclick="Send" disabled="@(!IsConnected)" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50">
-            Enviar Mensaje
-        </button>
-    </div>
-
-    <ul class="mt-4 space-y-1">
-        @foreach (var message in messages)
-        {
-            <li class="p-2 bg-slate-100 rounded dark:bg-slate-700 dark:text-slate-200">@message</li>
-        }
-    </ul>
-</div>
+<HomeUI 
+    Title="@($"{L["Home"]} - {L["AppTitle"]}")"
+    StatusLabel="@L["SwitchLanguage"]"
+    CurrentCulture="@Localization.CurrentCulture"
+    Messages="@messages"
+    IsConnected="@IsConnected"
+    @bind-UserInput="_userInput"
+    @bind-MessageInput="_messageInput"
+    OnSendMessage="Send"
+    OnLanguageSwitch="ChangeLanguage" />
 
 @code {
     private List<string> messages = new List<string>();
-    private string? userInput;
-    private string? messageInput;
+    private string? _userInput;
+    private string? _messageInput;
 
     protected override async Task OnInitializedAsync()
     {
@@ -67,16 +46,14 @@
     {
         if (SignalR.HubConnection.State == HubConnectionState.Connected)
         {
-            await SignalR.HubConnection.SendAsync("SendMessage", userInput ?? "Usuario", messageInput);
-            messageInput = "";
+            await SignalR.HubConnection.SendAsync("SendMessage", _userInput ?? "Usuario", _messageInput);
+            _messageInput = "";
         }
     }
 
     private void ChangeLanguage(string culture)
     {
         Localization.SetCulture(culture);
-        // In MAUI, we might need a restart or complex state management to refresh all components,
-        // but for this demo, StateHasChanged might suffice or a simple navigation.
         StateHasChanged();
     }
 

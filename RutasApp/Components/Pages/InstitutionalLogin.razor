@@ -1,0 +1,41 @@
+@page "/login"
+@inject NavigationManager Navigation
+@inject Microsoft.Extensions.Logging.ILogger<InstitutionalLogin> Logger
+
+<!-- 
+    Componente Contenedor: InstitutionalLogin
+    Responsabilidad: Lógica de negocio, inyección de servicios, gestión de estado.
+    Patrón: Smart Component
+-->
+
+<InstitutionalLoginUI 
+    UserCode="@_userCode" 
+    OnUserCodeChanged="@(code => _userCode = code)" 
+    OnSubmit="HandleSubmit" 
+    OnHelpRequested="HandleHelp" />
+
+@code {
+    private string? _userCode;
+
+    private async Task HandleSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(_userCode))
+        {
+            Logger.LogWarning("Intento de acceso con código vacío.");
+            return;
+        }
+
+        // Simulación de validación/autenticación
+        Logger.LogInformation("Validando código institucional: {Code}", _userCode);
+        
+        // Simular éxito y navegación
+        await Task.Delay(500); 
+        Navigation.NavigateTo("/");
+    }
+
+    private void HandleHelp()
+    {
+        Logger.LogInformation("La usuaria solicitó ayuda para encontrar su código.");
+        // Mostrar modal o navegar a una página de ayuda
+    }
+}

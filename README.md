@@ -126,13 +126,19 @@ Once pressed, a **10-second grace countdown** begins. This allows for cancellati
 
 ---
 
-## 7. Technical Architecture
+## 7. Arquitectura Técnica
 
-The ecosystem consists of three main projects:
+El ecosistema se compone de tres proyectos principales:
 
-*   **RutasApp**: A cross-platform **.NET MAUI** application for the end-user. It uses a local **SQLite** database for persistent storage, managed through **Entity Framework Core (Code First)**.
-*   **RutasBackend**: A web-based administration portal for official entities to manage user codes and oversight. It utilizes **SQL Server** and **Entity Framework Core (Code First)**.
-*   **RutasAppShared** (named `RutasAppBackend` in the filesystem): A shared class library that provides common models and business logic to both the mobile application and the backend.
+*   **RutasApp**: Aplicación multi-plataforma .NET MAUI para la usuaria final. Utiliza una base de datos local SQLite y **Tailwind CSS** para un diseño moderno y responsive.
+*   **RutasBackend**: Portal de administración basado en Blazor Server para entidades oficiales. Utiliza SQL Server y la librería de componentes **Radzen** para una interfaz profesional.
+*   **RutasAppBackend** (en el sistema de archivos): Biblioteca de clases compartida para modelos y lógica común.
 
-### Communication and Real-time Updates
-The mobile application (**RutasApp**) and the administrative portal (**RutasBackend**) communicate in real-time using **SignalR**, ensuring immediate alerts and data synchronization.
+### Arquitectura de Páginas: Container / Presentational
+
+Ambos proyectos implementan el patrón **Container/Presentational** para separar la lógica de la UI:
+
+-   **Componentes Contenedores (Smart)**: Gestionan el estado, la inyección de servicios y la lógica de negocio. Responden al "cómo funcionan las cosas".
+-   **Componentes de Presentación (Dumb)**: Enfocados exclusivamente en la UI. Reciben datos mediante `[Parameter]` y comunican eventos mediante `EventCallback`. Responden al "cómo se ven las cosas".
+
+**Objetivo**: Facilitar las pruebas unitarias y de integración con **bUnit**, permitiendo testear la lógica y la interfaz de forma aislada y predecible.

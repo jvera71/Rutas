@@ -1,0 +1,49 @@
+@using Microsoft.AspNetCore.SignalR.Client
+
+<div class="p-8 max-w-2xl mx-auto bg-white rounded-xl shadow-md space-y-4 dark:bg-slate-800">
+    <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+            @Title
+        </h1>
+        <div class="flex space-x-2">
+            <button @onclick='() => OnLanguageSwitch.InvokeAsync("es")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">ES</button>
+            <button @onclick='() => OnLanguageSwitch.InvokeAsync("en")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">EN</button>
+        </div>
+    </div>
+    
+    <p class="text-slate-500 dark:text-slate-400">
+        @StatusLabel: <strong>@CurrentCulture</strong>
+    </p>
+
+    <div class="space-y-2">
+        <input @bind="UserInput" @bind:event="oninput" placeholder="Nombre" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
+        <input @bind="MessageInput" @bind:event="oninput" placeholder="Mensaje" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
+        <button @onclick="OnSendMessage" disabled="@(!IsConnected)" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50">
+            Enviar Mensaje
+        </button>
+    </div>
+
+    <ul class="mt-4 space-y-1">
+        @foreach (var message in Messages)
+        {
+            <li class="p-2 bg-slate-100 rounded dark:bg-slate-700 dark:text-slate-200">@message</li>
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public string? StatusLabel { get; set; }
+    [Parameter] public string? CurrentCulture { get; set; }
+    [Parameter] public List<string> Messages { get; set; } = new();
+    [Parameter] public bool IsConnected { get; set; }
+    
+    [Parameter] public string? UserInput { get; set; }
+    [Parameter] public string? MessageInput { get; set; }
+    
+    [Parameter] public EventCallback<string> UserInputChanged { get; set; }
+    [Parameter] public EventCallback<string> MessageInputChanged { get; set; }
+    
+    [Parameter] public EventCallback OnSendMessage { get; set; }
+    [Parameter] public EventCallback<string> OnLanguageSwitch { get; set; }
+}
