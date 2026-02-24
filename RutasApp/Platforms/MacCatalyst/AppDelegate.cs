@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace RutasApp
+namespace RutasApp.Platforms.MacCatalyst
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

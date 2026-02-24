@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 
 using RutasBackend.Models;
 
-namespace RutasBackend
+namespace RutasBackend.Services
 {
     public class ApplicationAuthenticationStateProvider : AuthenticationStateProvider
     {

@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace RutasApp
+namespace RutasApp.Platforms.Android
 {
     [Application]
     public class MainApplication : MauiApplication

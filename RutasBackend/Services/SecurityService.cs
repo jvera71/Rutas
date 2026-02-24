@@ -16,7 +16,7 @@ using Radzen;
 
 using RutasBackend.Models;
 
-namespace RutasBackend
+namespace RutasBackend.Services
 {
     public partial class SecurityService
     {

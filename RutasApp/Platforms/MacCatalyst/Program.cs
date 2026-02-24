@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace RutasApp
+namespace RutasApp.Platforms.MacCatalyst
 {
     public class Program
     {

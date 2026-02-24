@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RutasBackend.Models;
+using RutasBackend.Models.Bd;
 
 namespace RutasBackend.Data
 {
@@ -23,8 +24,9 @@ namespace RutasBackend.Data
            
         }
 
-        public DbSet<RutasBackend.Models.Bd.OfficialEntity> OfficialEntities { get; set; }
-        public DbSet<RutasBackend.Models.Bd.OfficialEntityUser> OfficialEntityUsers { get; set; }
+        public DbSet<OfficialEntity> OfficialEntities { get; set; }
+        public DbSet<OfficialEntityUser> OfficialEntityUsers { get; set; }
+       
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {  

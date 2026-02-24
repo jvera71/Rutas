@@ -7,6 +7,7 @@ using RutasBackend.Models;
 using Microsoft.AspNetCore.OData;
 using Microsoft.OData.ModelBuilder;
 using Microsoft.AspNetCore.Components.Authorization;
+using RutasBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -28,7 +29,7 @@ builder.Services.AddHttpClient("RutasBackend").ConfigurePrimaryHttpMessageHandle
 builder.Services.AddHeaderPropagation(o => o.Headers.Add("Cookie"));
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
-builder.Services.AddScoped<RutasBackend.SecurityService>();
+builder.Services.AddScoped<SecurityService>();
 builder.Services.AddDbContext<ApplicationIdentityDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationIdentityConnection"));
@@ -44,7 +45,7 @@ builder.Services.AddControllers().AddOData(o =>
     oDataBuilder.EntitySet<ApplicationRole>("ApplicationRoles");
     o.AddRouteComponents("odata/Identity", oDataBuilder.GetEdmModel()).Count().Filter().OrderBy().Expand().Select().SetMaxTop(null).TimeZone = TimeZoneInfo.Utc;
 });
-builder.Services.AddScoped<AuthenticationStateProvider, RutasBackend.ApplicationAuthenticationStateProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider, ApplicationAuthenticationStateProvider>();
 var app = builder.Build();
 var forwardingOptions = new ForwardedHeadersOptions()
 {
