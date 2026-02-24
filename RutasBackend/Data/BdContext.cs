@@ -28,6 +28,7 @@ namespace RutasBackend.Data
         public DbSet<OfficialEntityUser> OfficialEntityUsers { get; set; }
 
         public DbSet<CitizenUser> CitizenUsers { get; set; }
+        public DbSet<CitizenUserAction> CitizenUserActions { get; set; }
         public DbSet<CompanionSegment> CompanionSegments { get; set; }
         public DbSet<Journey> Journeys { get; set; }
         public DbSet<PanicAlert> PanicAlerts { get; set; }
