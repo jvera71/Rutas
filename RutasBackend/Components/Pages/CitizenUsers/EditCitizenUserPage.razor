@@ -1,0 +1,11 @@
+@if (model != null)
+{
+    <CitizenUserForm 
+        Model="model"
+        CodeLabel="@(L["Citizen_User_Code"] ?? "Code")"
+        ActiveLabel="@(L["Citizen_User_Active"] ?? "Active")"
+        SaveText="@(L["Save"] ?? "Save")"
+        CancelText="@(L["Cancel"] ?? "Cancel")"
+        OnSubmit="HandleSubmit"
+        OnCancel="HandleCancel" />
+}

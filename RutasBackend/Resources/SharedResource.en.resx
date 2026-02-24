@@ -64,4 +64,49 @@
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to the Rutas App</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Citizen_Users_Title" xml:space="preserve">
+    <value>Citizen Users</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Citizen_User_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Citizen_User_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Citizen_User_CreatedAt" xml:space="preserve">
+    <value>Created At</value>
+  </data>
+  <data name="Add_Citizen_User" xml:space="preserve">
+    <value>Add Citizen User</value>
+  </data>
+  <data name="Edit_Citizen_User" xml:space="preserve">
+    <value>Edit Citizen User</value>
+  </data>
+  <data name="Delete_Citizen_Confirm" xml:space="preserve">
+    <value>Are you sure you want to delete this user?</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

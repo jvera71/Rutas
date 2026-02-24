@@ -1,0 +1,49 @@
+@using RutasBackend.Models.Bd
+@using Radzen
+@using Radzen.Blazor
+
+<RadzenTemplateForm TItem="CitizenUser" Data="@Model" Submit="@OnSubmit">
+    <RadzenStack Gap="1rem">
+        <RadzenRow AlignItems="AlignItems.Center">
+            <RadzenColumn Size="12" SizeMD="4">
+                <RadzenLabel Text="@CodeLabel" />
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeMD="8">
+                <RadzenTextBox @bind-Value="Model.Code" ReadOnly="true" class="w-100" />
+            </RadzenColumn>
+        </RadzenRow>
+        
+        <RadzenRow AlignItems="AlignItems.Center">
+            <RadzenColumn Size="12" SizeMD="4">
+                <RadzenLabel Text="@ActiveLabel" />
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeMD="8">
+                <RadzenSwitch @bind-Value="Model.IsActive" />
+            </RadzenColumn>
+        </RadzenRow>
+
+        <RadzenRow AlignItems="AlignItems.Center">
+            <RadzenColumn Size="12" SizeMD="4">
+                <RadzenLabel Text="Hardware Alerts Enabled" />
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeMD="8">
+                <RadzenSwitch @bind-Value="Model.HardwareAlertsEnabled" />
+            </RadzenColumn>
+        </RadzenRow>
+
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" Gap="0.5rem">
+            <RadzenButton ButtonStyle="ButtonStyle.Light" Text="@CancelText" Click="@(() => OnCancel.InvokeAsync())" />
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Text="@SaveText" />
+        </RadzenStack>
+    </RadzenStack>
+</RadzenTemplateForm>
+
+@code {
+    [Parameter] public CitizenUser Model { get; set; }
+    [Parameter] public string CodeLabel { get; set; }
+    [Parameter] public string ActiveLabel { get; set; }
+    [Parameter] public string SaveText { get; set; }
+    [Parameter] public string CancelText { get; set; }
+    [Parameter] public EventCallback<CitizenUser> OnSubmit { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
+}

@@ -64,4 +64,49 @@
   <data name="Welcome" xml:space="preserve">
     <value>Bienvenido a la aplicación de Rutas</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Cerrar Sesión</value>
+  </data>
+  <data name="Citizen_Users_Title" xml:space="preserve">
+    <value>Usuarios Ciudadanos</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="Citizen_User_Code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Citizen_User_Active" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="Citizen_User_CreatedAt" xml:space="preserve">
+    <value>Fecha de Creación</value>
+  </data>
+  <data name="Add_Citizen_User" xml:space="preserve">
+    <value>Añadir Usuario Ciudadano</value>
+  </data>
+  <data name="Edit_Citizen_User" xml:space="preserve">
+    <value>Editar Usuario Ciudadano</value>
+  </data>
+  <data name="Delete_Citizen_Confirm" xml:space="preserve">
+    <value>¿Estás seguro de que quieres eliminar este usuario?</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
 </root>

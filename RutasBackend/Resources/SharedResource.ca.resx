@@ -64,4 +64,49 @@
   <data name="Welcome" xml:space="preserve">
     <value>Benvingut a l'aplicació de Rutes</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inici</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Usuaris</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Rols</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Tancar Sessió</value>
+  </data>
+  <data name="Citizen_Users_Title" xml:space="preserve">
+    <value>Usuaris Ciutadans</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Afegir</value>
+  </data>
+  <data name="Citizen_User_Code" xml:space="preserve">
+    <value>Codi</value>
+  </data>
+  <data name="Citizen_User_Active" xml:space="preserve">
+    <value>Actiu</value>
+  </data>
+  <data name="Citizen_User_CreatedAt" xml:space="preserve">
+    <value>Data de Creació</value>
+  </data>
+  <data name="Add_Citizen_User" xml:space="preserve">
+    <value>Afegir Usuari Ciutadà</value>
+  </data>
+  <data name="Edit_Citizen_User" xml:space="preserve">
+    <value>Editar Usuari Ciutadà</value>
+  </data>
+  <data name="Delete_Citizen_Confirm" xml:space="preserve">
+    <value>Estàs segur que vols eliminar aquest usuari?</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Desar</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel·lar</value>
+  </data>
 </root>

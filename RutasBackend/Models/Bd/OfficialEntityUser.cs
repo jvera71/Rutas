@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RutasBackend.Models.Bd
@@ -7,6 +8,7 @@ namespace RutasBackend.Models.Bd
     /// Vincula un usuario del sistema de identidad (ApplicationUser) con una entidad oficial específica.
     /// </summary>
     [Table("OfficialEntityUsers")]
+    [Index(nameof(ApplicationUserId))]
     public class OfficialEntityUser
     {
         /// <summary>

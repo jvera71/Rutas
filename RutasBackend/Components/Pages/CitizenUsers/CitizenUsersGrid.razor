@@ -1,0 +1,30 @@
+@using RutasBackend.Models.Bd
+@using Radzen
+@using Radzen.Blazor
+
+<RadzenDataGrid Data="@Data" TItem="CitizenUser" AllowFiltering="true" AllowPaging="true" PageSizeOptions="@(new int[]{5, 10, 20})" AllowSorting="true">
+    <Columns>
+        <RadzenDataGridColumn TItem="CitizenUser" Property="Code" Title="@CodeTitle" />
+        <RadzenDataGridColumn TItem="CitizenUser" Property="IsActive" Title="@ActiveTitle" Type="typeof(bool)">
+            <Template Context="user">
+                <RadzenSwitch Value="user.IsActive" Disabled="true" />
+            </Template>
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="CitizenUser" Property="CreatedAt" Title="@CreatedAtTitle" FormatString="{0:d}" />
+        <RadzenDataGridColumn TItem="CitizenUser" Filterable="false" Sortable="false" TextAlign="Radzen.TextAlign.Center" Width="120px">
+            <Template Context="user">
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Light" Variant="Variant.Flat" Size="ButtonSize.Medium" Click="@(() => OnEdit.InvokeAsync(user))" @onclick:stopPropagation="true" />
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Variant="Variant.Flat" Shade="Shade.Lighter" Size="ButtonSize.Medium" class="rz-ml-1" Click="@(() => OnDelete.InvokeAsync(user))" @onclick:stopPropagation="true" />
+            </Template>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    [Parameter] public IEnumerable<CitizenUser> Data { get; set; }
+    [Parameter] public string CodeTitle { get; set; }
+    [Parameter] public string ActiveTitle { get; set; }
+    [Parameter] public string CreatedAtTitle { get; set; }
+    [Parameter] public EventCallback<CitizenUser> OnEdit { get; set; }
+    [Parameter] public EventCallback<CitizenUser> OnDelete { get; set; }
+}

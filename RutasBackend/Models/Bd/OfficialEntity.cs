@@ -29,5 +29,6 @@ namespace RutasBackend.Models.Bd
         /// Colección de usuarios administrativos vinculados a esta entidad.
         /// </summary>
         public ICollection<OfficialEntityUser> OfficialEntityUsers { get; set; }
+        public ICollection<CitizenUser> CitizenUsers { get; set; }
     }
 }

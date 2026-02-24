@@ -56,7 +56,13 @@ namespace RutasBackend.Models.Bd
         /// <summary>
         /// Identificador de la entidad oficial (ej. Ayuntamiento de Barcelona) que gestiona y validó a este usuario.
         /// </summary>
-        public Guid? OfficialEntityId { get; set; }
+        public Guid OfficialEntityId { get; set; }
+
+        /// <summary>
+        /// Propiedad de navegación a la entidad oficial.
+        /// </summary>
+        [ForeignKey(nameof(OfficialEntityId))]
+        public OfficialEntity OfficialEntity { get; set; }
 
         /// <summary>
         /// Indica si la cuenta del ciudadano está actualmente activa y autorizada para el sistema.

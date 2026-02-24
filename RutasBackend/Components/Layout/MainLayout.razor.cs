@@ -1,4 +1,5 @@
 using System.Net.Http;
+using System.Globalization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -37,6 +38,25 @@ namespace RutasBackend.Components.Layout
 
         [Inject]
         protected SecurityService Security { get; set; }
+
+        protected string SelectedCulture = CultureInfo.CurrentCulture.Name;
+
+        protected IEnumerable<object> SupportedCultures = new[]
+        {
+            new { Name = "Español", Value = "es" },
+            new { Name = "English", Value = "en" },
+            new { Name = "Français", Value = "fr" },
+            new { Name = "Català", Value = "ca" },
+            new { Name = "Euskara", Value = "eu" },
+            new { Name = "Galego", Value = "gl" }
+        };
+
+        protected void OnCultureChange(object value)
+        {
+            var culture = (string)value;
+            var redirectUri = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+            NavigationManager.NavigateTo($"/Culture/SetCulture?culture={culture}&redirectUri={Uri.EscapeDataString("/" + redirectUri)}", forceLoad: true);
+        }
 
         void SidebarToggleClick()
         {
