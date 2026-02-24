@@ -26,6 +26,11 @@ namespace RutasBackend.Models.Bd
         public string Code { get; set; }
 
         /// <summary>
+        /// Identificador unico de la app instalada en el dispositivo
+        /// </summary>
+        public Guid? LocalUserProfileId { get; set; }
+
+        /// <summary>
         /// PIN de seguridad para cancelar alarmas o acceder a funciones sensibles.
         /// </summary>
         [MaxLength(10)]
