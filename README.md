@@ -123,3 +123,16 @@ Once pressed, a **10-second grace countdown** begins. This allows for cancellati
 ### 7. Settings
 *   **Camouflage Configuration:** Selection of the fake UI (Calculator, Music Player, etc.).
 *   **Hardware Settings:** Enabling power button or shake-to-trigger alerts.
+
+---
+
+## 7. Technical Architecture
+
+The ecosystem consists of three main projects:
+
+*   **RutasApp**: A cross-platform **.NET MAUI** application for the end-user. It uses a local **SQLite** database for persistent storage, managed through **Entity Framework Core (Code First)**.
+*   **RutasBackend**: A web-based administration portal for official entities to manage user codes and oversight. It utilizes **SQL Server** and **Entity Framework Core (Code First)**.
+*   **RutasAppShared** (named `RutasAppBackend` in the filesystem): A shared class library that provides common models and business logic to both the mobile application and the backend.
+
+### Communication and Real-time Updates
+The mobile application (**RutasApp**) and the administrative portal (**RutasBackend**) communicate in real-time using **SignalR**, ensuring immediate alerts and data synchronization.
