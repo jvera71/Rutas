@@ -109,4 +109,22 @@
   <data name="Cancel" xml:space="preserve">
     <value>Utzi</value>
   </data>
+  <data name="Official_Entity_Name" xml:space="preserve">
+    <value>Izena</value>
+  </data>
+  <data name="Name_Required" xml:space="preserve">
+    <value>Izena derrigorrezkoa da</value>
+  </data>
+  <data name="Official_Entities_Title" xml:space="preserve">
+    <value>Erakunde Ofizialak</value>
+  </data>
+  <data name="Add_Official_Entity" xml:space="preserve">
+    <value>Gehitu Erakundea</value>
+  </data>
+  <data name="Edit_Official_Entity" xml:space="preserve">
+    <value>Editatu Erakundea</value>
+  </data>
+  <data name="Delete_Official_Entity_Confirm" xml:space="preserve">
+    <value>Ziur zaude erakunde hau ezabatu nahi duzula?</value>
+  </data>
 </root>

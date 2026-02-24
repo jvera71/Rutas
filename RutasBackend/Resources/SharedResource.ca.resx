@@ -109,4 +109,22 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel·lar</value>
   </data>
+  <data name="Official_Entity_Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Name_Required" xml:space="preserve">
+    <value>El nom és obligatori</value>
+  </data>
+  <data name="Official_Entities_Title" xml:space="preserve">
+    <value>Entitats Oficials</value>
+  </data>
+  <data name="Add_Official_Entity" xml:space="preserve">
+    <value>Afegir Entitat</value>
+  </data>
+  <data name="Edit_Official_Entity" xml:space="preserve">
+    <value>Editar Entitat</value>
+  </data>
+  <data name="Delete_Official_Entity_Confirm" xml:space="preserve">
+    <value>Estàs segur que vols eliminar aquesta entitat?</value>
+  </data>
 </root>

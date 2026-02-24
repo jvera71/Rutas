@@ -1,0 +1,23 @@
+@page "/official-entities"
+@using RutasBackend.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = Constants.RoleNames.Staff)]
+
+<RadzenStack Orientation="Orientation.Vertical" Gap="1rem" class="w-100">
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="@(L["Official_Entities_Title"] ?? "Official Entities")" TextStyle="TextStyle.H4" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
+                <RadzenButton Icon="add" Text="@(L["Add_Official_Entity"] ?? "Add Entity")" Click="@AddClick" ButtonStyle="ButtonStyle.Primary" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <OfficialEntitiesGrid 
+        Entities="@entities" 
+        NameTitle="@(L["Official_Entity_Name"] ?? "Name")"
+        OnEdit="EditClick" 
+        OnDelete="DeleteClick" />
+</RadzenStack>

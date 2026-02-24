@@ -1,0 +1,19 @@
+@using RutasBackend.Models.Bd
+@using Microsoft.Extensions.Localization
+@using RutasBackend.Data
+
+@if (model != null)
+{
+    <OfficialEntityForm 
+        Model="model"
+        NameLabel="@(L["Official_Entity_Name"] ?? "Name")"
+        NameRequiredText="@(L["Name_Required"] ?? "Name is required")"
+        SaveText="@(L["Save"] ?? "Save")"
+        CancelText="@(L["Cancel"] ?? "Cancel")"
+        OnSubmit="HandleSubmit"
+        OnCancel="HandleCancel" />
+}
+else
+{
+    <RadzenProgressBar Value="100" ShowValue="false" Mode="ProgressBarMode.Indeterminate" />
+}

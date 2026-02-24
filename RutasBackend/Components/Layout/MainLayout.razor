@@ -49,6 +49,7 @@
         </RadzenStack>
         <RadzenPanelMenu>
             <RadzenPanelMenuItem Text="@(L["Home"] ?? "Home")" Path="" />
+            <RadzenPanelMenuItem Text="@(L["Official_Entities_Title"] ?? "Official Entities")" Path="official-entities" Visible="@(Security.IsInRole("Staff"))" />
             <RadzenPanelMenuItem Text="@(L["Citizen_Users_Title"] ?? "Citizen Users")" Path="citizen-users" Visible="@(Security.IsInRole("OfficialEntityAdmin", "OfficialEntityUser"))" />
         </RadzenPanelMenu>
         <RadzenStack AlignItems="Radzen.AlignItems.Center" Gap="0" class="rz-py-4 rz-py-lg-6" Style="padding: var(--rz-panel-menu-item-padding);">

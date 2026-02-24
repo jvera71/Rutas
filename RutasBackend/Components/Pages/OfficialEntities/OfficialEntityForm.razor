@@ -1,0 +1,32 @@
+@using RutasBackend.Models.Bd
+@using Radzen
+@using Radzen.Blazor
+
+<RadzenTemplateForm TItem="OfficialEntity" Data="@Model" Submit="@OnSubmit">
+    <RadzenStack Gap="1rem">
+        <RadzenRow AlignItems="AlignItems.Center">
+            <RadzenColumn Size="12" SizeMD="4">
+                <RadzenLabel Text="@NameLabel" />
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeMD="8">
+                <RadzenTextBox @bind-Value="Model.Name" Name="Name" class="w-100" />
+                <RadzenRequiredValidator Component="Name" Text="@NameRequiredText" />
+            </RadzenColumn>
+        </RadzenRow>
+
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" Gap="0.5rem">
+            <RadzenButton ButtonStyle="ButtonStyle.Light" Text="@CancelText" Click="@(() => OnCancel.InvokeAsync())" />
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Text="@SaveText" />
+        </RadzenStack>
+    </RadzenStack>
+</RadzenTemplateForm>
+
+@code {
+    [Parameter] public OfficialEntity Model { get; set; }
+    [Parameter] public string NameLabel { get; set; }
+    [Parameter] public string NameRequiredText { get; set; }
+    [Parameter] public string SaveText { get; set; }
+    [Parameter] public string CancelText { get; set; }
+    [Parameter] public EventCallback<OfficialEntity> OnSubmit { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
+}
