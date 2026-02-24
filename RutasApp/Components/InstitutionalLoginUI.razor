@@ -29,14 +29,14 @@
         <!-- Login Form Container -->
         <div class="w-full space-y-6">
             <div class="text-center space-y-2">
-                <h2 class="text-2xl font-bold">Institutional Access</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">Enter your unique municipal authorization code to proceed to the secure dashboard.</p>
+                <h2 class="text-2xl font-bold">@Title</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">@Subtitle</p>
             </div>
             
             <div class="space-y-4 pt-4">
                 <div class="flex flex-col gap-2">
                     <label class="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1" for="user-code">
-                        Institutional User Code
+                        @LabelCode
                     </label>
                     <div class="relative">
                         <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
@@ -53,7 +53,7 @@
                 
                 <button class="w-full h-14 bg-[#136dec] hover:bg-[#136dec]/90 text-white font-bold rounded-xl shadow-lg shadow-[#136dec]/20 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
                         @onclick="OnSubmit">
-                    <span>Access App</span>
+                    <span>@ButtonText</span>
                     <span class="material-symbols-outlined text-xl">arrow_forward</span>
                 </button>
             </div>
@@ -64,7 +64,7 @@
                    @onclick:preventDefault
                    @onclick="OnHelpRequested">
                     <span class="material-symbols-outlined text-lg">help_outline</span>
-                    Where do I find my code?
+                    @HelpText
                 </a>
             </div>
         </div>
@@ -85,6 +85,12 @@
 
 @code {
     [Parameter] public string? UserCode { get; set; }
+    [Parameter] public string Title { get; set; } = "Institutional Access";
+    [Parameter] public string Subtitle { get; set; } = "Enter your unique municipal authorization code to proceed to the secure dashboard.";
+    [Parameter] public string LabelCode { get; set; } = "Institutional User Code";
+    [Parameter] public string ButtonText { get; set; } = "Access App";
+    [Parameter] public string HelpText { get; set; } = "Where do I find my code?";
+    
     [Parameter] public EventCallback<string> OnUserCodeChanged { get; set; }
     [Parameter] public EventCallback OnSubmit { get; set; }
     [Parameter] public EventCallback OnHelpRequested { get; set; }

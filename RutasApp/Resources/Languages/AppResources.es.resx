@@ -67,4 +67,22 @@
   <data name="SwitchLanguage" xml:space="preserve">
     <value>Cambiar Idioma</value>
   </data>
+  <data name="InstitutionalAccess" xml:space="preserve">
+    <value>Acceso Institucional</value>
+  </data>
+  <data name="InstitutionalUserCode" xml:space="preserve">
+    <value>Código de Usuario Institucional</value>
+  </data>
+  <data name="AccessApp" xml:space="preserve">
+    <value>Acceder a la App</value>
+  </data>
+  <data name="HelpQuestion" xml:space="preserve">
+    <value>¿Dónde encuentro mi código?</value>
+  </data>
+  <data name="LoginSubtitle" xml:space="preserve">
+    <value>Introduce tu código de autorización municipal único para acceder al panel de seguridad.</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Enviar Mensaje</value>
+  </data>
 </root>

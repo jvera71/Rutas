@@ -5,9 +5,13 @@
         <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
             @Title
         </h1>
-        <div class="flex space-x-2">
+        <div class="flex flex-wrap justify-end gap-2">
             <button @onclick='() => OnLanguageSwitch.InvokeAsync("es")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">ES</button>
             <button @onclick='() => OnLanguageSwitch.InvokeAsync("en")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">EN</button>
+            <button @onclick='() => OnLanguageSwitch.InvokeAsync("fr")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">FR</button>
+            <button @onclick='() => OnLanguageSwitch.InvokeAsync("ca")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">CA</button>
+            <button @onclick='() => OnLanguageSwitch.InvokeAsync("eu")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">EU</button>
+            <button @onclick='() => OnLanguageSwitch.InvokeAsync("gl")' class="px-2 py-1 bg-slate-200 rounded text-xs dark:bg-slate-700">GL</button>
         </div>
     </div>
     
@@ -19,7 +23,7 @@
         <input @bind="UserInput" @bind:event="oninput" placeholder="Nombre" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
         <input @bind="MessageInput" @bind:event="oninput" placeholder="Mensaje" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
         <button @onclick="OnSendMessage" disabled="@(!IsConnected)" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50">
-            Enviar Mensaje
+            @SendButtonText
         </button>
     </div>
 
@@ -34,6 +38,7 @@
 @code {
     [Parameter] public string? Title { get; set; }
     [Parameter] public string? StatusLabel { get; set; }
+    [Parameter] public string? SendButtonText { get; set; } = "Send Message";
     [Parameter] public string? CurrentCulture { get; set; }
     [Parameter] public List<string> Messages { get; set; } = new();
     [Parameter] public bool IsConnected { get; set; }

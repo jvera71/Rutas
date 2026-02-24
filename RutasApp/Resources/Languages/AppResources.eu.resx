@@ -59,30 +59,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppTitle" xml:space="preserve">
-    <value>My Rutas App</value>
+    <value>Nire Ibilbideen Aplikazioa</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>Hasiera</value>
   </data>
   <data name="SwitchLanguage" xml:space="preserve">
-    <value>Switch Language</value>
+    <value>Hizkuntza aldatu</value>
   </data>
   <data name="InstitutionalAccess" xml:space="preserve">
-    <value>Institutional Access</value>
+    <value>Erakunde-sarbidea</value>
   </data>
   <data name="InstitutionalUserCode" xml:space="preserve">
-    <value>Institutional User Code</value>
+    <value>Erakundeko erabiltzaile-kodea</value>
   </data>
   <data name="AccessApp" xml:space="preserve">
-    <value>Access App</value>
+    <value>Aplikaziora sartu</value>
   </data>
   <data name="HelpQuestion" xml:space="preserve">
-    <value>Where do I find my code?</value>
+    <value>Non aurki dezaket nire kodea?</value>
   </data>
   <data name="LoginSubtitle" xml:space="preserve">
-    <value>Enter your unique municipal authorization code to proceed to the secure dashboard.</value>
+    <value>Sartu zure udal-baimen kode bakarra segurtasun-panelean sartzeko.</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
-    <value>Send Message</value>
+    <value>Mezua bidali</value>
   </data>
 </root>

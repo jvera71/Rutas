@@ -59,30 +59,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppTitle" xml:space="preserve">
-    <value>My Rutas App</value>
+    <value>A miña Aplicación de Rutas</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>Inicio</value>
   </data>
   <data name="SwitchLanguage" xml:space="preserve">
-    <value>Switch Language</value>
+    <value>Cambiar Idioma</value>
   </data>
   <data name="InstitutionalAccess" xml:space="preserve">
-    <value>Institutional Access</value>
+    <value>Acceso Institucional</value>
   </data>
   <data name="InstitutionalUserCode" xml:space="preserve">
-    <value>Institutional User Code</value>
+    <value>Código de Usuario Institucional</value>
   </data>
   <data name="AccessApp" xml:space="preserve">
-    <value>Access App</value>
+    <value>Acceder á App</value>
   </data>
   <data name="HelpQuestion" xml:space="preserve">
-    <value>Where do I find my code?</value>
+    <value>Onde atopo o meu código?</value>
   </data>
   <data name="LoginSubtitle" xml:space="preserve">
-    <value>Enter your unique municipal authorization code to proceed to the secure dashboard.</value>
+    <value>Introduce o teu código de autorización municipal único para acceder ao panel de seguridade.</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
-    <value>Send Message</value>
+    <value>Enviar Mensaxe</value>
   </data>
 </root>

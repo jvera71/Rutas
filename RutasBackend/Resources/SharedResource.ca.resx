@@ -58,31 +58,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppTitle" xml:space="preserve">
-    <value>My Rutas App</value>
+  <data name="Hello" xml:space="preserve">
+    <value>Hola món</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="SwitchLanguage" xml:space="preserve">
-    <value>Switch Language</value>
-  </data>
-  <data name="InstitutionalAccess" xml:space="preserve">
-    <value>Institutional Access</value>
-  </data>
-  <data name="InstitutionalUserCode" xml:space="preserve">
-    <value>Institutional User Code</value>
-  </data>
-  <data name="AccessApp" xml:space="preserve">
-    <value>Access App</value>
-  </data>
-  <data name="HelpQuestion" xml:space="preserve">
-    <value>Where do I find my code?</value>
-  </data>
-  <data name="LoginSubtitle" xml:space="preserve">
-    <value>Enter your unique municipal authorization code to proceed to the secure dashboard.</value>
-  </data>
-  <data name="SendMessage" xml:space="preserve">
-    <value>Send Message</value>
+  <data name="Welcome" xml:space="preserve">
+    <value>Benvingut a l'aplicació de Rutes</value>
   </data>
 </root>

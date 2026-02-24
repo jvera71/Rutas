@@ -141,4 +141,16 @@ Ambos proyectos implementan el patrón **Container/Presentational** para separar
 -   **Componentes Contenedores (Smart)**: Gestionan el estado, la inyección de servicios y la lógica de negocio. Responden al "cómo funcionan las cosas".
 -   **Componentes de Presentación (Dumb)**: Enfocados exclusivamente en la UI. Reciben datos mediante `[Parameter]` y comunican eventos mediante `EventCallback`. Responden al "cómo se ven las cosas".
 
-**Objetivo**: Facilitar las pruebas unitarias y de integración con **bUnit**, permitiendo testear la lógica y la interfaz de forma aislada y predecible.
+### Internacionalización (Multi-idioma)
+
+Ambos proyectos están configurados para soportar los siguientes idiomas: **Español, Inglés, Francés, Catalán, Euskera y Gallego**. Utilizan el sistema estándar de **Recursos (.resx)** de .NET:
+
+-   **Archivos de Recursos**: Se encuentran en la carpeta `Resources`.
+    -   `AppResources.{lang}.resx` (RutasApp)
+    -   `SharedResource.{lang}.resx` (RutasBackend)
+-   **Implementación en UI**:
+    1.  Inyectar `IStringLocalizer<T>` en el componente **Container**.
+    2.  Pasar las cadenas traducidas como parámetros al componente **Presentational**.
+-   **Cambio de Idioma**:
+    -   En **RutasApp** se utiliza un `LocalizationService` personalizado para cambiar la cultura global de la aplicación en tiempo de ejecución.
+    -   En **RutasBackend** se utiliza el middleware estándar `UseRequestLocalization`.
