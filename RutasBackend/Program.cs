@@ -25,6 +25,13 @@ builder.Services.AddCors(options =>
     });
 });
 builder.Services.AddControllers();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+var supportedCultures = new[] { "es", "en" };
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
 builder.Services.AddRadzenComponents();
 builder.Services.AddRadzenCookieThemeService(options =>
 {
@@ -77,6 +84,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStatusCodePagesWithReExecute("/not-found");
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseRequestLocalization(localizationOptions);
 app.MapControllers();
 app.UseHeaderPropagation();
 app.MapStaticAssets();
