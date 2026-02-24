@@ -1,10 +1,64 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@using RutasApp.Services
+@inject SignalRService SignalR
 
 <div class="p-8 max-w-2xl mx-auto bg-white rounded-xl shadow-md space-y-4 dark:bg-slate-800">
     <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
-        ¡Hola, mundo!
+        ¡Comunicación por SignalR!
     </h1>
     <p class="text-slate-500 dark:text-slate-400">
-        Bienvenido a tu nueva aplicación configurada con Tailwind CSS.
+        Esta aplicación está configurada para conectarse al hub: <strong>AppHub</strong>.
     </p>
+
+    <div class="space-y-2">
+        <input @bind="userInput" placeholder="Nombre" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
+        <input @bind="messageInput" placeholder="Mensaje" class="w-full px-3 py-2 border rounded-md dark:bg-slate-700 dark:text-white" />
+        <button @onclick="Send" disabled="@(!IsConnected)" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50">
+            Enviar Mensaje
+        </button>
+    </div>
+
+    <ul class="mt-4 space-y-1">
+        @foreach (var message in messages)
+        {
+            <li class="p-2 bg-slate-100 rounded dark:bg-slate-700 dark:text-slate-200">@message</li>
+        }
+    </ul>
 </div>
+
+@code {
+    private List<string> messages = new List<string>();
+    private string? userInput;
+    private string? messageInput;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await SignalR.StartAsync();
+
+            SignalR.HubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+            {
+                var encodedMsg = $"{user}: {message}";
+                messages.Add(encodedMsg);
+                InvokeAsync(StateHasChanged);
+            });
+        }
+        catch (Exception ex)
+        {
+            messages.Add($"Error de conexión: {ex.Message}");
+        }
+    }
+
+    private async Task Send()
+    {
+        if (SignalR.HubConnection.State == HubConnectionState.Connected)
+        {
+            await SignalR.HubConnection.SendAsync("SendMessage", userInput ?? "Usuario", messageInput);
+            messageInput = "";
+        }
+    }
+
+    public bool IsConnected => SignalR.HubConnection?.State == HubConnectionState.Connected;
+}

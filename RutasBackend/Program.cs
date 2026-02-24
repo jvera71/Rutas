@@ -9,9 +9,21 @@ using Microsoft.OData.ModelBuilder;
 using Microsoft.AspNetCore.Components.Authorization;
 using RutasBackend.Services;
 
+using RutasBackend.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents().AddInteractiveServerComponents().AddHubOptions(options => options.MaximumReceiveMessageSize = 10 * 1024 * 1024);
+builder.Services.AddSignalR();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
 builder.Services.AddControllers();
 builder.Services.AddRadzenComponents();
 builder.Services.AddRadzenCookieThemeService(options =>
@@ -64,12 +76,14 @@ if (!app.Environment.IsDevelopment())
 
 app.UseStatusCodePagesWithReExecute("/not-found");
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 app.MapControllers();
 app.UseHeaderPropagation();
 app.MapStaticAssets();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseAntiforgery();
+app.MapHub<AppHub>("/apphub");
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 app.Services.CreateScope().ServiceProvider.GetRequiredService<BdContext>().Database.Migrate();
 app.Services.CreateScope().ServiceProvider.GetRequiredService<ApplicationIdentityDbContext>().Database.Migrate();
