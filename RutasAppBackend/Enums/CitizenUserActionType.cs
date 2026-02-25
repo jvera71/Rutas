@@ -29,6 +29,16 @@ namespace RutasAppBackend.Enums
         /// </summary>
         CodeAlreadyInUse,
 
+        /// <summary>
+        /// El codigo y el LocalUserProfileId son correctos.
+        /// </summary>
+        ApplicationStartSuccess,
+
+        /// <summary>
+        /// El codigo es correcto pero el LocalUserProfileId es incorrecto
+        /// </summary>
+        ApplicationStartError
+
 
     }
 }
