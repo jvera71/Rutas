@@ -25,7 +25,10 @@ namespace RutasApp
     		builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
+            var app =  builder.Build();
+
+
+
         }
     }
 }

@@ -17,6 +17,18 @@ namespace RutasAppBackend.Enums
         /// <summary>
         /// El perfil del usuario ha sido visualizado por una entidad oficial.
         /// </summary>
-        ProfileViewed
+        ProfileViewed,
+
+        /// <summary>
+        /// Se ha utilizado el Code para activar una instacia de la app.
+        /// </summary>
+        CodeActivated,
+
+        /// <summary>
+        /// Se ha producido un intento de   activar una instacia de la app con un codigo ya utilizado.
+        /// </summary>
+        CodeAlreadyInUse,
+
+
     }
 }

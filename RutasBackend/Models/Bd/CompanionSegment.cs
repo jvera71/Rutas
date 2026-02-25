@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RutasBackend.Models.Bd
 {
+    #nullable enable
     /// <summary>
     /// Representa un segmento de un trayecto en el que una usuaria fue acompañada por otra.
     /// Útil para registrar encuentros físicos parciales durante la ruta.

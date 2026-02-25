@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RutasBackend.Models.Bd
 {
+    #nullable enable
     /// <summary>
     /// Representa a un usuario ciudadano anónimo en el sistema.
     /// La identidad real del ciudadano solo es conocida por la entidad oficial (ayuntamiento u organización) 
@@ -27,7 +28,7 @@ namespace RutasBackend.Models.Bd
         /// </summary>
         [Required]
         [MaxLength(8)]
-        public string Code { get; set; }
+        public string Code { get; set; } = string.Empty;
 
         /// <summary>
         /// Identificador único del perfil local en la aplicación móvil instalada en el dispositivo.
@@ -62,7 +63,7 @@ namespace RutasBackend.Models.Bd
         /// Propiedad de navegación a la entidad oficial.
         /// </summary>
         [ForeignKey(nameof(OfficialEntityId))]
-        public OfficialEntity OfficialEntity { get; set; }
+        public OfficialEntity? OfficialEntity { get; set; }
 
         /// <summary>
         /// Indica si la cuenta del ciudadano está actualmente activa y autorizada para el sistema.

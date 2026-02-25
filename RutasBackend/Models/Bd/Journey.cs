@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RutasBackend.Models.Bd
 {
+    #nullable enable
     /// <summary>
     /// Representa un trayecto o viaje realizado por un usuario.
     /// Los datos de geolocalización son efímeros y deben eliminarse al finalizar el viaje,

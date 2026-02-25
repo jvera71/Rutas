@@ -11,6 +11,7 @@ using RutasBackend.Services;
 using RutasBackend.Data;
 using RutasBackend.Models.Bd;
 using Microsoft.EntityFrameworkCore;
+using RutasBackend.Models;
 
 namespace RutasBackend.Components.Pages
 {

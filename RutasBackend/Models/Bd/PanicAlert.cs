@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RutasBackend.Models.Bd
 {
+    #nullable enable
     /// <summary>
     /// Representa una alerta de pánico activada por un usuario en situación de riesgo.
     /// Notifica en tiempo real a autoridades y usuarios cercanos a través de SignalR.
