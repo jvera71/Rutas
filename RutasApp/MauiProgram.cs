@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using RutasApp.Data;
 
 namespace RutasApp
 {
@@ -27,7 +28,7 @@ namespace RutasApp
 
             var app =  builder.Build();
 
-
+            
 
         }
     }
