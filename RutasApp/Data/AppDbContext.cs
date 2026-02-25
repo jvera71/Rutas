@@ -9,6 +9,10 @@ namespace RutasApp.Data
         public DbSet<LocalUserProfile> LocalUserProfiles { get; set; }
         public DbSet<AppConfiguration> AppConfigurations { get; set; }
 
+        public AppDbContext()
+        {
+        }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
@@ -17,9 +21,17 @@ namespace RutasApp.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // Typical SQLite connection string for MAUI apps
-                string dbPath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "rutasapp.db");
-                optionsBuilder.UseSqlite($"Filename={dbPath}");
+                try
+                {
+                    // Typical SQLite connection string for MAUI apps
+                    string dbPath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "rutasapp.db");
+                    optionsBuilder.UseSqlite($"Filename={dbPath}");
+                }
+                catch (Exception)
+                {
+                    // Fallback for design-time
+                    optionsBuilder.UseSqlite("Data Source=rutasapp.db");
+                }
             }
         }
     }

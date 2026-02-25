@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using RutasApp.Data;
 
 namespace RutasApp
@@ -26,10 +27,17 @@ namespace RutasApp
     		builder.Logging.AddDebug();
 #endif
 
-            var app =  builder.Build();
+            builder.Services.AddDbContext<AppDbContext>();
 
-            
+            var app = builder.Build();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                dbContext.Database.Migrate();
+            }
+
+            return app;
         }
     }
 }
